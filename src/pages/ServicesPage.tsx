@@ -9,8 +9,9 @@ const ServicesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Architectural Services in Abohar | Gill Architects</title>
-        <meta name="description" content="Explore our services: 2D Floor Planning, 3D Elevation Design, Interior Design, and Construction Drawings. Professional architectural services in Abohar." />
+        <title>Premium Architectural Services in Abohar & Punjab | Gill Architects</title>
+        <meta name="description" content="Explore our premium architectural services: 2D Floor Planning, 3D Elevation Design, Interior Design, and Custom House Design. We are the top building planners in Abohar." />
+        <meta name="keywords" content="architectural services, house design services, building design services, 3d elevation design, interior designer, floor plan designer, architect in punjab" />
       </Helmet>
 
       <div className="bg-charcoal-900 text-white pt-36 pb-20 md:pt-48 md:pb-24 relative overflow-hidden">
@@ -18,12 +19,12 @@ const ServicesPage = () => {
         <div className="container mx-auto px-5 md:px-8 relative z-10 flex flex-col items-center text-center">
           <div className="inline-flex items-center gap-4 mb-6">
             <span className="w-8 md:w-12 h-[1px] bg-gradient-to-r from-transparent to-pearl-300"></span>
-            <span className="text-pearl-200 text-[10px] md:text-xs font-sans uppercase tracking-[0.4em] font-medium">OUR EXPERTISE</span>
+            <span className="text-pearl-200 text-[10px] md:text-xs font-sans uppercase tracking-[0.4em] font-medium">OUR ARCHITECTURAL SERVICES</span>
             <span className="w-8 md:w-12 h-[1px] bg-gradient-to-l from-transparent to-pearl-300"></span>
           </div>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl drop-shadow-2xl">Our Services</h1>
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl drop-shadow-2xl">Expert Architecture & Planning</h1>
           <p className="text-pearl-100 text-lg md:text-xl max-w-2xl font-light leading-relaxed">
-            Comprehensive design solutions tailored to your needs.
+            Comprehensive building design solutions, from modern house planning to premium interior design, tailored to your lifestyle.
           </p>
         </div>
       </div>

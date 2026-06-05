@@ -1,18 +1,65 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight, Phone, CheckCircle2, MapPin, Ruler, Home } from 'lucide-react';
+import { ArrowRight, Phone, CheckCircle2, MapPin, Ruler, Home, ChevronDown, ChevronUp } from 'lucide-react';
+import { useState } from 'react';
 import { BUSINESS_INFO, SERVICES } from '../data/business';
 import { Helmet } from 'react-helmet-async';
 import { PhoneMenu } from '../components/PhoneMenu';
 import InteractiveCard from '../components/InteractiveCard';
 
 const HomePage = () => {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const faqs = [
+    {
+      question: "Why should I hire a professional architect in Abohar?",
+      answer: "Hiring a professional architect in Abohar ensures that your residential building design or commercial space is optimized for both aesthetics and structural integrity. At Gill Architects, our architectural planning services save you money by preventing costly construction errors, maximizing plot space, and ensuring compliance with local building regulations."
+    },
+    {
+      question: "What is included in your 3D elevation design services?",
+      answer: "Our 3D elevation design includes highly detailed 3D architectural rendering, modern front elevation design, and material suggestions. Whether you want a luxury home architect to design a modern villa or need commercial elevation design, we provide photorealistic 3D exterior design so you can visualize your project before construction starts."
+    },
+    {
+      question: "Do you provide interior design services as well?",
+      answer: "Yes, Gill Architects is also a leading interior designer in Abohar. We offer complete interior planning services, including living room interior design, modular kitchen design, and contemporary interior design for both homes and commercial buildings. We merge luxury interior design with modern functionality."
+    },
+    {
+      question: "Which areas do you serve in Punjab?",
+      answer: "While we are recognized as the best architect in Abohar, our architectural consultancy extends to neighboring regions. We regularly serve clients looking for an architect in Fazilka, an architect in Sri Ganganagar, Malout, Muktsar, and across Punjab. Our construction design consultant will travel to your site to ensure flawless execution."
+    }
+  ];
+
   return (
     <>
       <Helmet>
-        <title>Gill Architects | Modern Architecture & Interior Design in Abohar</title>
-        <meta name="description" content="Best Architect in Abohar. Gill Architects specializes in modern 3D elevation, house planning, and interior design. Call 9888611970 for a consultation." />
+        <title>Gill Architects | Best Architect in Abohar | Modern House Planning & 3D Elevation</title>
+        <meta name="description" content="Looking for the best architect in Abohar? Gill Architects offers premium architectural planning services, modern house design, 3D elevation, and luxury interior design in Punjab and surrounding areas." />
+        <meta name="keywords" content="architect in abohar, best architect in abohar, architectural designer, residential architect, commercial architect, modern house design, 3d elevation design, interior designer in abohar, 2d floor plan, house planner in abohar" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "ArchitecturalService",
+              "name": "Gill Architects",
+              "image": "https://i.ibb.co/rRQ3XWRp/IMG-20260605-132311-1.png",
+              "url": "https://gillarchitects.vercel.app",
+              "telephone": "+91 98886 11970",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Abohar",
+                "addressRegion": "Punjab",
+                "addressCountry": "IN"
+              },
+              "priceRange": "$$",
+              "description": "Premium architectural planning services, modern house design, 3D elevation, and luxury interior design in Punjab."
+            }
+          `}
+        </script>
       </Helmet>
 
       {/* Hero Section */}
@@ -265,9 +312,9 @@ const HomePage = () => {
                 <span className="text-pearl-200 text-[10px] md:text-xs font-sans uppercase tracking-[0.4em] font-medium">The Gill Standard</span>
                 <span className="w-8 md:w-12 h-[1px] bg-gradient-to-l from-transparent to-pearl-300"></span>
               </div>
-              <h2 className="font-display text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Why Choose Gill Architects?</h2>
+              <h2 className="font-display text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Why Choose Gill Architects in Abohar?</h2>
               <p className="text-charcoal-400 text-lg mb-8 leading-relaxed">
-                We don't just draw maps; we design lifestyles. Our approach combines structural safety with modern aesthetics, ensuring your home is beautiful, durable, and cost-effective.
+                As the leading architectural designer and building planner in Punjab, we don't just draw maps; we design lifestyles. Our custom house design approach combines structural safety with modern aesthetics, ensuring your premium home is beautiful, durable, and highly functional.
               </p>
               
               <div className="space-y-6">
@@ -309,6 +356,102 @@ const HomePage = () => {
                 />
               </InteractiveCard>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Content Injection */}
+      <section className="py-20 bg-pearl-50 border-t border-pearl-100">
+        <div className="container mx-auto px-5 md:px-8">
+          <div className="max-w-4xl mx-auto text-lg text-charcoal-700 leading-relaxed [&>p]:mb-6">
+            <h2 className="font-display text-3xl font-extrabold text-charcoal-900 mb-6 tracking-tight">
+              Leading Architectural Solutions in Punjab
+            </h2>
+            <p>
+              Welcome to Gill Architects, the premier <strong>modern architecture firm</strong> serving the region. If you are searching for the <strong>best architect in Abohar</strong>, you have arrived at the right place. We specialize in bringing bold visions to life through expert <strong>architectural planning services</strong>, meticulous <strong>house design services</strong>, and cutting-edge <strong>3D elevation design</strong>. Our mission is to seamlessly construct spaces that are as structurally sound as they are visually breathtaking. From simple home planning to luxurious commercial designs, our dedicated team of experts is here to guide you every step of the way.
+            </p>
+            
+            <h3 className="font-display text-2xl font-bold text-charcoal-900 mt-10 mb-4">Comprehensive House Planning Consultant</h3>
+            <p>
+              A strong foundation starts with an exceptional design. As an experienced <strong>house planner</strong> and <strong>architectural designer</strong>, our firm excels at both <strong>residential building design</strong> and <strong>commercial building design</strong>. We understand that every plot is unique, which is why we provide bespoke <strong>architectural floor planning</strong> to maximize your space. Whether you need a standard <strong>2d floor plan</strong>, an intricate <strong>house floor plan</strong>, or comprehensive <strong>construction planning services</strong>, our layouts are engineered to enhance your daily lifestyle while adhering to strict local regulations. 
+            </p>
+            
+            <h3 className="font-display text-2xl font-bold text-charcoal-900 mt-10 mb-4">Mastering 3D Elevation & Facade Design</h3>
+            <p>
+              Visualizing your project before the bricks are laid is critical. Our <strong>3d designer in abohar</strong> brings blueprints to reality with stunning <strong>3d house rendering</strong> and <strong>3d architectural rendering</strong>. We are experts in crafting the perfect <strong>modern front elevation</strong> and <strong>house front design</strong> to ensure your property possesses ultimate curb appeal. Whether you want a contemporary villa or need a prominent <strong>commercial elevation design</strong>, our <strong>house elevation designer</strong> utilizes advanced technology to deliver photorealistic <strong>3d exterior design</strong> and <strong>residential elevation design</strong>. We help you choose the precise materials and colors to construct your dream <strong>modern house design</strong>.
+            </p>
+
+            <h3 className="font-display text-2xl font-bold text-charcoal-900 mt-10 mb-4">Premium Interior Designer in Abohar</h3>
+            <p>
+              Architecture extends far beyond the exterior walls. As an accomplished <strong>home interior designer</strong>, we understand how to make the inside of your home feel as magnificent as the outside. <strong>Gill Architects</strong> offers unparalleled <strong>interior planning services</strong>, specializing in gorgeous <strong>living room interior design</strong>, functional <strong>bedroom interior design</strong>, and state-of-the-art <strong>modular kitchen design</strong>. Our <strong>commercial interior designer</strong> team also creates high-performance workspaces. Whether you prefer <strong>contemporary interior design</strong> or opulent <strong>luxury interior design</strong>, we select the perfect fixtures, lighting, and textures to craft environments that echo your personal taste.
+            </p>
+
+            <h3 className="font-display text-2xl font-bold text-charcoal-900 mt-10 mb-4">Why We Are the Top Architect in Punjab</h3>
+            <p>
+              Our reputation extends beyond Abohar. Clients continuously choose us when seeking an <strong>architect in fazilka</strong>, an <strong>architect in sri ganganagar</strong>, an <strong>architect in malout</strong>, or an <strong>architect in muktsar</strong>. We serve as a trusted <strong>building consultant in abohar</strong> and the surrounding regions because our <strong>premium architecture services</strong> prioritize client needs. From a <strong>custom home design</strong> or <strong>new home planning</strong> to large-scale infrastructure, we are the <strong>architect in punjab</strong> you can rely on. Our <strong>building design services</strong> and <strong>planning and design services</strong> combine innovation, structural precision, and timeless elegance.
+            </p>
+            
+            <p className="mt-8 font-medium">
+              If you’re looking for a <strong>residential architect</strong>, <strong>commercial architect</strong>, or <strong>luxury home architect</strong> to transform your property, partner with Gill Architects today. Experience the difference a true <strong>modern architect</strong> and devoted <strong>building design services</strong> consultant can make. Let our <strong>house architect</strong> and <strong>villa architect</strong> redefine your standards of living.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Comprehensive FAQ & Local SEO Section */}
+      <section className="py-24 bg-white border-t border-pearl-100 relative overflow-hidden">
+        {/* Subtle background decoration */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-pearl-50/50 -skew-x-12 transform origin-top pointer-events-none"></div>
+
+        <div className="container mx-auto px-5 md:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-16">
+            
+            {/* Left Column: Local SEO Content */}
+            <div className="lg:w-5/12 flex flex-col justify-center">
+              <div className="inline-flex items-center gap-4 mb-6">
+                <span className="w-8 md:w-12 h-[1px] bg-charcoal-200"></span>
+                <span className="text-charcoal-500 text-[10px] md:text-xs font-sans uppercase tracking-[0.4em] font-bold">Trusted Locally & Beyond</span>
+              </div>
+              <h2 className="font-display text-3xl md:text-4xl font-extrabold text-charcoal-900 mb-6 tracking-tight leading-tight">
+                Your Premier <span className="text-transparent bg-clip-text bg-gradient-to-r from-charcoal-900 to-charcoal-500">Architects in Punjab</span>
+              </h2>
+              <div className="prose prose-lg text-charcoal-600 mb-8 font-light">
+                <p>
+                  Finding an <strong>architect near me</strong> who understands both high-end luxury and structural integrity can be challenging. <strong>Gill Architects</strong> bridges this gap, operating as a top-tier <strong>residential architect</strong> and <strong>commercial architect</strong> right here in Abohar.
+                </p>
+                <p className="mt-4">
+                  Whether you are seeking custom <strong>house floor planning</strong>, breathtaking <strong>3D house rendering</strong>, or comprehensive <strong>interior planning services</strong>, our building consultants bring decades of collective design intelligence to your doorstep. We are proud to be the building designer of choice for clients in Abohar, Fazilka, Muktsar, Malout, Sri Ganganagar, and across Punjab.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column: FAQs */}
+            <div className="lg:w-7/12">
+              <h3 className="text-2xl font-display font-bold text-charcoal-900 mb-8 border-b border-pearl-200 pb-4">Frequently Asked Questions</h3>
+              <div className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <div key={index} className="border border-pearl-200 rounded-xl overflow-hidden bg-white hover:border-pearl-300 transition-colors">
+                    <button 
+                      onClick={() => toggleFaq(index)}
+                      className="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                    >
+                      <span className="font-bold text-charcoal-900 pr-8">{faq.question}</span>
+                      <div className="w-8 h-8 rounded-full bg-pearl-50 flex items-center justify-center shrink-0">
+                        {openFaq === index ? <ChevronUp className="w-4 h-4 text-charcoal-600" /> : <ChevronDown className="w-4 h-4 text-charcoal-600" />}
+                      </div>
+                    </button>
+                    <div 
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                    >
+                      <div className="p-6 pt-0 text-charcoal-600 font-light border-t border-pearl-50 mt-2">
+                        {faq.answer}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

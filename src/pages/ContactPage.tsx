@@ -36,7 +36,8 @@ const ContactPage = () => {
     <>
       <Helmet>
         <title>Contact Gill Architects | Best Architect in Abohar</title>
-        <meta name="description" content="Get in touch with Gill Architects for your house planning and design needs. Call 9888611970 or visit us in Abohar." />
+        <meta name="description" content="Contact Gill Architects today. As the best architect in Abohar, we offer 2D floor plans, 3D elevation, and interior design across Fazilka, Sri Ganganagar, and Punjab." />
+        <meta name="keywords" content="contact architect in abohar, architect near me, house planner in abohar, 3d designer in abohar, building consultant in abohar, Gill Architects Abohar" />
       </Helmet>
 
       <div className="bg-charcoal-900 text-white pt-36 pb-20 md:pt-48 md:pb-24 relative overflow-hidden">
@@ -47,9 +48,9 @@ const ContactPage = () => {
             <span className="text-pearl-200 text-[10px] md:text-xs font-sans uppercase tracking-[0.4em] font-medium">GET IN TOUCH</span>
             <span className="w-8 md:w-12 h-[1px] bg-gradient-to-l from-transparent to-pearl-300"></span>
           </div>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl drop-shadow-2xl">Contact Us</h1>
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl drop-shadow-2xl">Contact Gill Architects</h1>
           <p className="text-pearl-100 text-lg md:text-xl max-w-2xl font-light leading-relaxed">
-            Start your journey towards a better space today.
+            Start your journey towards a better space today. We're the preferred architectural consultancy in Abohar & Punjab.
           </p>
         </div>
       </div>

@@ -8,8 +8,9 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>About Gill Architects | Professional Architects in Abohar</title>
-        <meta name="description" content="Learn about Gill Architects in Abohar. We are committed to structural precision, creativity, and client-first planning for residential and commercial projects." />
+        <title>About Gill Architects | The Best Architect in Abohar & Punjab</title>
+        <meta name="description" content="Learn about Gill Architects, the leading architectural planning firm and interior designer in Abohar. We serve Fazilka, Sri Ganganagar, and all of Punjab." />
+        <meta name="keywords" content="architect in abohar, best architect in abohar, architect in fazilka, architect in sri ganganagar, architect in punjab, interior designer in abohar, Gill Architects Punjab" />
       </Helmet>
 
       <div className="bg-charcoal-900 text-white pt-36 pb-20 md:pt-48 md:pb-24 relative overflow-hidden">
@@ -20,9 +21,9 @@ const AboutPage = () => {
             <span className="text-pearl-200 text-[10px] md:text-xs font-sans uppercase tracking-[0.4em] font-medium">DISCOVER OUR FIRM</span>
             <span className="w-8 md:w-12 h-[1px] bg-gradient-to-l from-transparent to-pearl-300"></span>
           </div>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl drop-shadow-2xl">About Us</h1>
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl drop-shadow-2xl">About Gill Architects</h1>
           <p className="text-pearl-100 text-lg md:text-xl max-w-2xl font-light leading-relaxed">
-            Building trust through structural integrity and modern design excellence.
+            Building trust through structural integrity and modern house design excellence in Punjab.
           </p>
         </div>
       </div>
@@ -40,12 +41,12 @@ const AboutPage = () => {
                 <span className="text-pearl-700 text-[10px] md:text-xs font-sans uppercase tracking-[0.4em] font-medium">THE STORY</span>
                 <span className="w-8 md:w-12 h-[1px] bg-gradient-to-l from-transparent to-pearl-600"></span>
               </div>
-              <h2 className="font-display text-4xl md:text-5xl font-extrabold text-charcoal-900 mb-6 tracking-tight">Our Firm</h2>
+              <h2 className="font-display text-4xl md:text-5xl font-extrabold text-charcoal-900 mb-6 tracking-tight">Your Local Architectural Designer</h2>
               <p className="text-charcoal-600 mb-6 leading-relaxed">
-                Gill Architects is a premier architectural design studio based in Abohar, Punjab. We specialize in transforming visions into concrete reality. Our practice is built on the belief that good design should be accessible, sustainable, and structurally sound.
+                Gill Architects is a premier architectural design studio based in Abohar, Punjab. Recognized as the best architect in Abohar, we specialize in transforming visions into concrete reality. From custom home design to large-scale commercial building design, our practice is built on the belief that good architecture should be accessible, sustainable, and structurally sound.
               </p>
               <p className="text-charcoal-600 mb-6 leading-relaxed">
-                With years of experience in the local market, we understand the specific needs of families and businesses in Abohar and surrounding areas. From soil conditions to local climate considerations, our designs are tailored to thrive in our specific environment.
+                With years of local expertise serving Abohar, Fazilka, Sri Ganganagar, and surrounding areas, our building planning consultants understand local regulations and soil conditions perfectly. Whether you need a home interior designer, advanced 3D house elevation, or professional architectural consultancy, we ensure every detail is tailored for success.
               </p>
               
               <div className="bg-pearl-50 p-6 border-l-4 border-charcoal-900 my-8">
