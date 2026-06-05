@@ -387,21 +387,69 @@ const HomePage = () => {
           <div className="flex flex-col lg:flex-row gap-16">
             
             {/* Left Column: Local SEO Content */}
-            <div className="lg:w-5/12 flex flex-col justify-center">
-              <div className="inline-flex items-center gap-4 mb-6">
-                <span className="w-8 md:w-12 h-[1px] bg-charcoal-200"></span>
-                <span className="text-charcoal-500 text-[10px] md:text-xs font-sans uppercase tracking-[0.4em] font-bold">Trusted Locally & Beyond</span>
-              </div>
-              <h2 className="font-display text-3xl md:text-4xl font-extrabold text-charcoal-900 mb-6 tracking-tight leading-tight">
-                Your Premier <span className="text-transparent bg-clip-text bg-gradient-to-r from-charcoal-900 to-charcoal-500">Architects in Punjab</span>
-              </h2>
-              <div className="prose prose-lg text-charcoal-600 mb-8 font-light">
-                <p>
-                  Finding an <strong>architect near me</strong> who understands both high-end luxury and structural integrity can be challenging. <strong>Gill Architects</strong> bridges this gap, operating as a top-tier <strong>residential architect</strong> and <strong>commercial architect</strong> right here in Abohar.
-                </p>
-                <p className="mt-4">
-                  Whether you are seeking custom <strong>house floor planning</strong>, breathtaking <strong>3D house rendering</strong>, or comprehensive <strong>interior planning services</strong>, our building consultants bring decades of collective design intelligence to your doorstep. We are proud to be the building designer of choice for clients in Abohar, Fazilka, Muktsar, Malout, Sri Ganganagar, and across Punjab.
-                </p>
+            <div className="lg:w-5/12 relative">
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative z-10"
+              >
+                <div className="inline-flex items-center gap-4 mb-6">
+                  <span className="w-8 md:w-12 h-[1px] bg-charcoal-300"></span>
+                  <span className="text-charcoal-500 text-[10px] md:text-xs font-sans uppercase tracking-[0.4em] font-bold">Trusted Locally & Beyond</span>
+                </div>
+                <h2 className="font-display text-4xl md:text-5xl font-extrabold text-charcoal-900 mb-8 tracking-tight leading-tight [text-wrap:balance]">
+                  Your Premier <span className="relative inline-block">
+                    <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-charcoal-900 via-charcoal-700 to-charcoal-500">Architects in Punjab</span>
+                    <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#faf0ca]/60 -z-0" viewBox="0 0 100 12" preserveAspectRatio="none">
+                      <path d="M0,10 Q50,0 100,10" fill="none" stroke="currentColor" strokeWidth="4" />
+                    </svg>
+                  </span>
+                </h2>
+
+                <InteractiveCard 
+                  flowColor="#faf0ca" 
+                  tiltIntensity={5}
+                  className="mb-8"
+                >
+                  <div className="p-8 bg-white border border-pearl-100 rounded-2xl shadow-[0_20px_50px_-20px_rgba(0,0,0,0.1)] [transform-style:preserve-3d]">
+                    <div className="prose prose-base text-charcoal-600 font-light [transform:translateZ(20px)]">
+                      <p className="leading-relaxed">
+                        Finding an <strong>architect near me</strong> who understands both high-end luxury and structural integrity can be challenging. <strong>Gill Architects</strong> bridges this gap, operating as a top-tier <strong>residential</strong> and <strong>commercial architect</strong> in Abohar.
+                      </p>
+                      <p className="mt-4 leading-relaxed">
+                        From <strong>house floor planning</strong> to breathtaking <strong>3D rendering</strong>, our building consultants bring decades of collective design intelligence to your doorstep in <strong>Abohar, Fazilka, Muktsar, Malout</strong>, and <strong>Sri Ganganagar</strong>.
+                      </p>
+                    </div>
+                  </div>
+                </InteractiveCard>
+
+                <div className="flex gap-6 mt-8">
+                  <div className="flex flex-col">
+                    <span className="text-2xl font-display font-bold text-charcoal-900">500+</span>
+                    <span className="text-[10px] uppercase tracking-wider text-charcoal-400 font-semibold">Projects Completed</span>
+                  </div>
+                  <div className="w-[1px] h-10 bg-pearl-200"></div>
+                  <div className="flex flex-col">
+                    <span className="text-2xl font-display font-bold text-charcoal-900">100%</span>
+                    <span className="text-[10px] uppercase tracking-wider text-charcoal-400 font-semibold">Client Satisfaction</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Decorative Architectural Elements */}
+              <div className="absolute -top-10 -left-10 w-40 h-40 border border-pearl-100 -z-0 rounded-full opacity-50"></div>
+              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-pearl-50 rounded-full -z-0 opacity-30 blur-3xl"></div>
+              
+              {/* Measurement Lines Mockup */}
+              <div className="absolute right-0 top-1/4 hidden lg:block pointer-events-none opacity-20">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 10V110H110" stroke="#1a1a1a" strokeWidth="0.5" />
+                  <path d="M10 30H30M10 50H50M10 70H30M10 90H50" stroke="#1a1a1a" strokeWidth="0.5" />
+                  <circle cx="110" cy="110" r="2" fill="#1a1a1a" />
+                  <text x="60" y="105" fontSize="6" fill="#1a1a1a" fontFamily="monospace">AREA MAP v1.0</text>
+                </svg>
               </div>
             </div>
 
