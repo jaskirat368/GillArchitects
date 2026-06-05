@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider, ScrollRestoration, Outlet } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import StickyCTA from './components/layout/StickyCTA';
@@ -56,6 +57,7 @@ export default function App() {
   return (
     <HelmetProvider>
       <RouterProvider router={router} />
+      <Analytics />
     </HelmetProvider>
   );
 }
