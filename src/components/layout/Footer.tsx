@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Instagram, Facebook, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, ArrowRight } from 'lucide-react';
 import { BUSINESS_INFO, SERVICES } from '../../data/business';
-import { PhoneMenu } from '../PhoneMenu';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,9 +28,6 @@ const Footer = () => {
             <div className="flex gap-4">
               <a href={BUSINESS_INFO.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-charcoal-800 flex items-center justify-center hover:bg-charcoal-700 hover:text-[#faf0ca] transition-colors">
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-charcoal-800 flex items-center justify-center hover:bg-charcoal-700 transition-colors">
-                <Facebook className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -73,9 +69,9 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-charcoal-500 shrink-0" />
-                <PhoneMenu direction="up">
-                  <span className="cursor-pointer hover:text-white transition-colors">{BUSINESS_INFO.phones.join(" / ")}</span>
-                </PhoneMenu>
+                <a href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`} className="hover:text-white transition-colors">
+                  {BUSINESS_INFO.phone}
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-charcoal-500 shrink-0" />

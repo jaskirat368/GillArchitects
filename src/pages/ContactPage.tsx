@@ -2,8 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Phone, Mail, MapPin, Clock, MessageCircle, ChevronDown, Instagram } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/business';
-import { PhoneMenu } from '../components/PhoneMenu';
-import { WhatsappMenu } from '../components/WhatsappMenu';
 import InteractiveCard from '../components/InteractiveCard';
 import { motion } from 'motion/react';
 
@@ -76,11 +74,12 @@ const ContactPage = () => {
                     </div>
                     <h3 className="text-lg font-bold text-charcoal-900 mb-1">Phone</h3>
                     <p className="text-sm text-charcoal-500 mb-2">Mon-Sat (9am-7pm)</p>
-                    <PhoneMenu direction="up">
-                      <button className="font-bold text-charcoal-900 hover:text-charcoal-600 transition-colors cursor-pointer">
-                        Call Now
-                      </button>
-                    </PhoneMenu>
+                    <a 
+                      href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
+                      className="font-bold text-charcoal-900 hover:text-charcoal-600 transition-colors cursor-pointer"
+                    >
+                      Call Now
+                    </a>
                   </div>
                 </InteractiveCard>
 
@@ -91,11 +90,14 @@ const ContactPage = () => {
                     </div>
                     <h3 className="text-lg font-bold text-charcoal-900 mb-1">WhatsApp</h3>
                     <p className="text-sm text-charcoal-500 mb-2">24/7 Support</p>
-                    <WhatsappMenu direction="up">
-                      <button className="font-bold text-charcoal-900 hover:text-charcoal-600 transition-colors cursor-pointer">
-                        Quick Chat
-                      </button>
-                    </WhatsappMenu>
+                    <a 
+                      href={`https://wa.me/${BUSINESS_INFO.whatsapp}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-charcoal-900 hover:text-charcoal-600 transition-colors cursor-pointer"
+                    >
+                      Quick Chat
+                    </a>
                   </div>
                 </InteractiveCard>
 

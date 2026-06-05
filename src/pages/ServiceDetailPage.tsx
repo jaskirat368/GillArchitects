@@ -3,7 +3,6 @@ import { useParams, Navigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { SERVICES, BUSINESS_INFO } from '../data/business';
 import { Phone, ArrowRight, AlertTriangle, CheckCircle } from 'lucide-react';
-import { PhoneMenu } from '../components/PhoneMenu';
 
 const ServiceDetailPage = () => {
   const { serviceId } = useParams();
@@ -98,15 +97,14 @@ const ServiceDetailPage = () => {
                 </p>
                 
                 <div className="space-y-4">
-                  <PhoneMenu className="w-full text-center">
-                    <div 
-                      className="block w-full bg-white text-charcoal-900 text-center py-3 rounded-full font-bold hover:bg-pearl-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
-                    >
-                      Call Us
-                    </div>
-                  </PhoneMenu>
                   <a 
-                    href={`https://wa.me/91${BUSINESS_INFO.whatsapp}`}
+                    href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
+                    className="block w-full bg-white text-charcoal-900 text-center py-3 rounded-full font-bold hover:bg-pearl-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+                  >
+                    Call Us
+                  </a>
+                  <a 
+                    href={`https://wa.me/${BUSINESS_INFO.whatsapp}`}
                     className="block w-full bg-[#25D366] text-white text-center py-3 rounded-full font-bold hover:bg-[#20bd5a] transition-colors"
                   >
                     WhatsApp Us

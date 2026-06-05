@@ -1,9 +1,9 @@
 export const BUSINESS_INFO = {
   name: "Gill Architects",
-  phone: "+91 98886 11970",
-  phones: ["+91 98886 11970", "+91 98886 17761"],
-  whatsapp: "9888611970",
-  whatsapps: ["9888611970", "9888617761"],
+  phone: "+91 98886 17761",
+  phones: ["+91 98886 17761"],
+  whatsapp: "9888617761",
+  whatsapps: ["9888617761"],
   instagram: "https://www.instagram.com/gill_architects?igsh=MThlOG90aXd1bXd2dQ==",
   location: "Abohar, Punjab",
   email: "contact@gillarchitects.com", // Placeholder based on domain, can be updated

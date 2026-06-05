@@ -5,7 +5,6 @@ import { ArrowRight, Phone, CheckCircle2, MapPin, Ruler, Home, ChevronDown, Chev
 import { useState } from 'react';
 import { BUSINESS_INFO, SERVICES } from '../data/business';
 import { Helmet } from 'react-helmet-async';
-import { PhoneMenu } from '../components/PhoneMenu';
 import InteractiveCard from '../components/InteractiveCard';
 
 const HomePage = () => {
@@ -48,7 +47,7 @@ const HomePage = () => {
               "name": "Gill Architects",
               "image": "https://i.ibb.co/rRQ3XWRp/IMG-20260605-132311-1.png",
               "url": "https://gillarchitects.vercel.app",
-              "telephone": "+91 98886 11970",
+              "telephone": "+91 98886 17761",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Abohar",
@@ -113,7 +112,7 @@ const HomePage = () => {
             <InteractiveCard 
               flowColor="#faf0ca"
               tiltIntensity={8}
-              className="max-w-xl mb-10 overflow-hidden" 
+              className="max-w-xl mb-6 overflow-hidden" 
             >
               <div className="bg-white/5 backdrop-blur-md border border-white/10 border-l-2 border-l-[#faf0ca] p-5 md:p-6 w-full h-full group [transform-style:preserve-3d]">
                 <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -122,18 +121,37 @@ const HomePage = () => {
                 </p>
               </div>
             </InteractiveCard>
+
+            {/* Trust Signal */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="flex items-center gap-4 mb-10 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full"
+            >
+              <div className="flex -space-x-2">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="w-8 h-8 rounded-full border-2 border-charcoal-900 bg-charcoal-800 flex items-center justify-center overflow-hidden">
+                    <img src={`https://i.pravatar.cc/100?u=${i + 10}`} alt="Client" className="w-full h-full object-cover opacity-80" />
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[#faf0ca] text-xs font-bold tracking-wider">12+ YEARS OF EXCELLENCE</span>
+                <span className="text-pearl-200 text-[10px]">Trusted by 500+ Happy Clients</span>
+              </div>
+            </motion.div>
             
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-start w-full sm:w-auto mt-4">
-              <PhoneMenu className="w-full sm:w-48">
-                <div 
-                  className="group relative overflow-hidden w-full bg-white text-charcoal-900 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:-translate-y-1 flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  <div className="absolute inset-0 w-full h-full bg-[#faf0ca] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></div>
-                  <Phone className="w-4 h-4 relative z-10" /> 
-                  <span className="relative z-10 whitespace-nowrap">Call Now</span>
-                </div>
-              </PhoneMenu>
+              <a 
+                href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
+                className="w-full sm:w-48 group relative overflow-hidden bg-white text-charcoal-900 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:-translate-y-1 flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <div className="absolute inset-0 w-full h-full bg-[#faf0ca] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></div>
+                <Phone className="w-4 h-4 relative z-10" /> 
+                <span className="relative z-10 whitespace-nowrap">Call Now</span>
+              </a>
               <Link 
                 to="/contact"
                 className="group w-full sm:w-48 bg-charcoal-900/40 border border-white/30 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:bg-white/10 hover:border-white hover:-translate-y-1 backdrop-blur-sm flex items-center justify-center gap-2"
@@ -439,13 +457,12 @@ const HomePage = () => {
             Don't risk your dream home with poor planning. Book a professional consultation today.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <PhoneMenu direction="up">
-              <div 
-                className="bg-charcoal-900 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-charcoal-900/20 cursor-pointer text-center"
-              >
-                Call Us
-              </div>
-            </PhoneMenu>
+            <a 
+              href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
+              className="bg-charcoal-900 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-2xl hover:ring-4 hover:ring-charcoal-900/20 cursor-pointer text-center min-w-[200px]"
+            >
+              Call Us
+            </a>
             <Link 
               to="/contact"
               className="bg-white text-charcoal-900 border border-pearl-200 px-8 py-4 rounded-full font-semibold hover:bg-pearl-50 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-xl hover:ring-4 hover:ring-charcoal-900/10"

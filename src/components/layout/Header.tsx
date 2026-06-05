@@ -4,7 +4,6 @@ import { Menu, X, Phone, ArrowRight } from 'lucide-react';
 import { BUSINESS_INFO } from '../../data/business';
 import { cn } from '../../lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
-import { PhoneMenu } from '../PhoneMenu';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,10 +69,13 @@ const Header = () => {
         </nav>
 
         <div className="hidden lg:flex items-center gap-4">
-          <PhoneMenu className="flex items-center gap-2 text-charcoal-600 hover:text-charcoal-900 font-medium text-sm transition-colors">
+          <a 
+            href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
+            className="flex items-center gap-2 text-charcoal-600 hover:text-charcoal-900 font-medium text-sm transition-colors"
+          >
             <Phone className="w-4 h-4" />
-            <span>{BUSINESS_INFO.phones.join(" / ")}</span>
-          </PhoneMenu>
+            <span>{BUSINESS_INFO.phone}</span>
+          </a>
           <Link
             to="/contact"
             className="bg-charcoal-900 text-white px-6 py-2.5 text-sm font-medium rounded-full hover:bg-charcoal-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex items-center gap-2"
@@ -115,11 +117,12 @@ const Header = () => {
                 </Link>
               ))}
               <div className="flex flex-col gap-3 mt-4">
-                <PhoneMenu className="w-full">
-                  <div className="flex items-center justify-center gap-2 w-full py-3 border border-pearl-200 rounded-2xl text-charcoal-700 font-medium">
-                    <Phone className="w-4 h-4" /> Call Us
-                  </div>
-                </PhoneMenu>
+                <a 
+                  href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
+                  className="flex items-center justify-center gap-2 w-full py-3 border border-pearl-200 rounded-2xl text-charcoal-700 font-medium"
+                >
+                  <Phone className="w-4 h-4" /> Call Us
+                </a>
                 <Link
                   to="/contact"
                   className="flex items-center justify-center gap-2 w-full py-3 bg-charcoal-900 text-white rounded-full font-medium"
