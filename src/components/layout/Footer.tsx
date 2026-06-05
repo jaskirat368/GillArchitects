@@ -27,7 +27,7 @@ const Footer = () => {
               Modern architectural authority in Abohar. We design spaces that blend structural intelligence with aesthetic elegance.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-charcoal-800 flex items-center justify-center hover:bg-charcoal-700 transition-colors">
+              <a href={BUSINESS_INFO.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-charcoal-800 flex items-center justify-center hover:bg-charcoal-700 hover:text-[#faf0ca] transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-charcoal-800 flex items-center justify-center hover:bg-charcoal-700 transition-colors">

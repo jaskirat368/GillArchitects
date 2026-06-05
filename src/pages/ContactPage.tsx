@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Phone, Mail, MapPin, Clock, MessageCircle, ChevronDown } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle, ChevronDown, Instagram } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/business';
 import { PhoneMenu } from '../components/PhoneMenu';
 import { WhatsappMenu } from '../components/WhatsappMenu';
@@ -68,7 +68,7 @@ const ContactPage = () => {
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-extrabold text-charcoal-900 mb-8 tracking-tight">Get In Touch</h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <InteractiveCard overflowVisible flowColor="#faf0ca" className="border border-pearl-100">
                   <div className="p-6 bg-white shrink flex flex-col h-full rounded-[inherit]">
                     <div className="w-12 h-12 bg-pearl-100 rounded-2xl flex items-center justify-center mb-4">
@@ -99,7 +99,20 @@ const ContactPage = () => {
                   </div>
                 </InteractiveCard>
 
-                <InteractiveCard flowColor="#faf0ca" className="border border-pearl-100 md:col-span-2">
+                <InteractiveCard overflowVisible flowColor="#E1306C" className="border border-pearl-100">
+                  <div className="p-6 bg-white shrink flex flex-col h-full rounded-[inherit]">
+                    <div className="w-12 h-12 bg-pearl-100 rounded-2xl flex items-center justify-center mb-4">
+                      <Instagram className="w-6 h-6 text-[#E1306C]" />
+                    </div>
+                    <h3 className="text-lg font-bold text-charcoal-900 mb-1">Instagram</h3>
+                    <p className="text-sm text-charcoal-500 mb-2">Daily Updates</p>
+                    <a href={BUSINESS_INFO.instagram} target="_blank" rel="noopener noreferrer" className="font-bold text-charcoal-900 hover:text-charcoal-600 transition-colors inline-block mt-auto">
+                      View Profile
+                    </a>
+                  </div>
+                </InteractiveCard>
+
+                <InteractiveCard flowColor="#faf0ca" className="border border-pearl-100 md:col-span-3 lg:-mt-0">
                   <div className="p-6 flex items-start gap-4 bg-white rounded-[inherit]">
                     <div className="w-12 h-12 bg-pearl-100 rounded-2xl flex items-center justify-center shrink-0">
                       <MapPin className="w-6 h-6 text-charcoal-900" />

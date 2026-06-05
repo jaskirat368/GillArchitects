@@ -360,44 +360,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* SEO Content Injection */}
-      <section className="py-20 bg-pearl-50 border-t border-pearl-100">
-        <div className="container mx-auto px-5 md:px-8">
-          <div className="max-w-4xl mx-auto text-lg text-charcoal-700 leading-relaxed [&>p]:mb-6">
-            <h2 className="font-display text-3xl font-extrabold text-charcoal-900 mb-6 tracking-tight">
-              Leading Architectural Solutions in Punjab
-            </h2>
-            <p>
-              Welcome to Gill Architects, the premier <strong>modern architecture firm</strong> serving the region. If you are searching for the <strong>best architect in Abohar</strong>, you have arrived at the right place. We specialize in bringing bold visions to life through expert <strong>architectural planning services</strong>, meticulous <strong>house design services</strong>, and cutting-edge <strong>3D elevation design</strong>. Our mission is to seamlessly construct spaces that are as structurally sound as they are visually breathtaking. From simple home planning to luxurious commercial designs, our dedicated team of experts is here to guide you every step of the way.
-            </p>
-            
-            <h3 className="font-display text-2xl font-bold text-charcoal-900 mt-10 mb-4">Comprehensive House Planning Consultant</h3>
-            <p>
-              A strong foundation starts with an exceptional design. As an experienced <strong>house planner</strong> and <strong>architectural designer</strong>, our firm excels at both <strong>residential building design</strong> and <strong>commercial building design</strong>. We understand that every plot is unique, which is why we provide bespoke <strong>architectural floor planning</strong> to maximize your space. Whether you need a standard <strong>2d floor plan</strong>, an intricate <strong>house floor plan</strong>, or comprehensive <strong>construction planning services</strong>, our layouts are engineered to enhance your daily lifestyle while adhering to strict local regulations. 
-            </p>
-            
-            <h3 className="font-display text-2xl font-bold text-charcoal-900 mt-10 mb-4">Mastering 3D Elevation & Facade Design</h3>
-            <p>
-              Visualizing your project before the bricks are laid is critical. Our <strong>3d designer in abohar</strong> brings blueprints to reality with stunning <strong>3d house rendering</strong> and <strong>3d architectural rendering</strong>. We are experts in crafting the perfect <strong>modern front elevation</strong> and <strong>house front design</strong> to ensure your property possesses ultimate curb appeal. Whether you want a contemporary villa or need a prominent <strong>commercial elevation design</strong>, our <strong>house elevation designer</strong> utilizes advanced technology to deliver photorealistic <strong>3d exterior design</strong> and <strong>residential elevation design</strong>. We help you choose the precise materials and colors to construct your dream <strong>modern house design</strong>.
-            </p>
-
-            <h3 className="font-display text-2xl font-bold text-charcoal-900 mt-10 mb-4">Premium Interior Designer in Abohar</h3>
-            <p>
-              Architecture extends far beyond the exterior walls. As an accomplished <strong>home interior designer</strong>, we understand how to make the inside of your home feel as magnificent as the outside. <strong>Gill Architects</strong> offers unparalleled <strong>interior planning services</strong>, specializing in gorgeous <strong>living room interior design</strong>, functional <strong>bedroom interior design</strong>, and state-of-the-art <strong>modular kitchen design</strong>. Our <strong>commercial interior designer</strong> team also creates high-performance workspaces. Whether you prefer <strong>contemporary interior design</strong> or opulent <strong>luxury interior design</strong>, we select the perfect fixtures, lighting, and textures to craft environments that echo your personal taste.
-            </p>
-
-            <h3 className="font-display text-2xl font-bold text-charcoal-900 mt-10 mb-4">Why We Are the Top Architect in Punjab</h3>
-            <p>
-              Our reputation extends beyond Abohar. Clients continuously choose us when seeking an <strong>architect in fazilka</strong>, an <strong>architect in sri ganganagar</strong>, an <strong>architect in malout</strong>, or an <strong>architect in muktsar</strong>. We serve as a trusted <strong>building consultant in abohar</strong> and the surrounding regions because our <strong>premium architecture services</strong> prioritize client needs. From a <strong>custom home design</strong> or <strong>new home planning</strong> to large-scale infrastructure, we are the <strong>architect in punjab</strong> you can rely on. Our <strong>building design services</strong> and <strong>planning and design services</strong> combine innovation, structural precision, and timeless elegance.
-            </p>
-            
-            <p className="mt-8 font-medium">
-              If you’re looking for a <strong>residential architect</strong>, <strong>commercial architect</strong>, or <strong>luxury home architect</strong> to transform your property, partner with Gill Architects today. Experience the difference a true <strong>modern architect</strong> and devoted <strong>building design services</strong> consultant can make. Let our <strong>house architect</strong> and <strong>villa architect</strong> redefine your standards of living.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Comprehensive FAQ & Local SEO Section */}
       <section className="py-24 bg-white border-t border-pearl-100 relative overflow-hidden">
         {/* Subtle background decoration */}
