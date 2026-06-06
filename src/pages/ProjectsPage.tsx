@@ -1,17 +1,94 @@
 import React from 'react';
-import InteractiveCard from '../components/InteractiveCard';
+import { motion } from 'motion/react';
+
+const PROJECT_IMAGES = [
+  "https://i.ibb.co/j91XxtDN/IMG-20260606-WA0003.jpg",
+  "https://i.ibb.co/TDm6qtv9/IMG-20260606-WA0004.jpg",
+  "https://i.ibb.co/t9XJHjy/IMG-20260606-WA0005.jpg",
+  "https://i.ibb.co/GgR7SHw/IMG-20260606-WA0006.jpg",
+  "https://i.ibb.co/zHQpcFLJ/IMG-20260606-WA0007.jpg",
+  "https://i.ibb.co/NgpHwsJw/IMG-20260606-WA0008.jpg",
+  "https://i.ibb.co/VY0BhjX0/IMG-20260606-WA0010.jpg",
+  "https://i.ibb.co/QvhLHYPR/IMG-20260606-WA0009.jpg",
+  "https://i.ibb.co/rR0FKXVk/IMG-20260606-WA0011.jpg",
+  "https://i.ibb.co/SDY01wDx/IMG-20260606-WA0012.jpg",
+  "https://i.ibb.co/N6Tv8Zjv/IMG-20260606-WA0016.jpg",
+  "https://i.ibb.co/CpV0yVzn/IMG-20260606-WA0015.jpg",
+  "https://i.ibb.co/qv0cT46/IMG-20260606-WA0013.jpg",
+  "https://i.ibb.co/j91NZwPw/IMG-20260606-WA0014.jpg",
+  "https://i.ibb.co/QvccCNvh/IMG-20260606-WA0017.jpg",
+  "https://i.ibb.co/B2nkR3fF/IMG-20260606-WA0018.jpg",
+  "https://i.ibb.co/84QcM3Mf/IMG-20260606-WA0021.jpg",
+  "https://i.ibb.co/zWBXykhf/IMG-20260606-WA0023.jpg",
+  "https://i.ibb.co/Rpgw94Lr/IMG-20260606-WA0022.jpg",
+  "https://i.ibb.co/cSYWXtsB/IMG-20260606-WA0019.jpg",
+  "https://i.ibb.co/MDhkkpnM/IMG-20260606-WA0020.jpg",
+  "https://i.ibb.co/Y4t9HpJX/IMG-20260606-WA0025.jpg",
+  "https://i.ibb.co/xqB5crYX/IMG-20260606-WA0024.jpg",
+  "https://i.ibb.co/cK58W6Sm/IMG-20260606-WA0026.jpg",
+  "https://i.ibb.co/1J2k4MGV/IMG-20260606-WA0032.jpg",
+  "https://i.ibb.co/8ndkx6dD/IMG-20260606-WA0028.jpg",
+  "https://i.ibb.co/6RrBLjJY/IMG-20260606-WA0029.jpg",
+  "https://i.ibb.co/gLWvHfPG/IMG-20260606-WA0027.jpg",
+  "https://i.ibb.co/Pzz15Dmq/IMG-20260606-WA0030.jpg",
+  "https://i.ibb.co/DFzFVDX/IMG-20260606-WA0031.jpg",
+  "https://i.ibb.co/WpRcdzLt/IMG-20260606-WA0033.jpg",
+  "https://i.ibb.co/YTNd3GtC/IMG-20260606-WA0034.jpg",
+  "https://i.ibb.co/Q7S7T9wq/IMG-20260606-WA0035.jpg",
+  "https://i.ibb.co/GvT8Jpdy/IMG-20260606-WA0036.jpg",
+  "https://i.ibb.co/CFf5Hb6/IMG-20260606-WA0037.jpg",
+  "https://i.ibb.co/rRKF4dgB/IMG-20260606-WA0039.jpg",
+  "https://i.ibb.co/RpGsCDQp/IMG-20260606-WA0040.jpg",
+  "https://i.ibb.co/fztB9q42/IMG-20260606-WA0038.jpg"
+];
+
+// Return slightly varied heights and widths, ensuring none are too small
+const getBentoClass = (index: number) => {
+  const pattern = index % 7;
+  // We want minimal differences: mostly 1x1, standard large cards, some spanning row 2
+  // grid auto-rows-[300px] md:auto-rows-[400px]
+  switch (pattern) {
+    case 0: return "md:col-span-2 md:row-span-1";
+    case 1: return "md:col-span-1 md:row-span-1";
+    case 2: return "md:col-span-1 md:row-span-2";
+    case 3: return "md:col-span-1 md:row-span-1";
+    case 4: return "md:col-span-1 md:row-span-1";
+    case 5: return "md:col-span-2 md:row-span-1";
+    case 6: return "md:col-span-1 md:row-span-1";
+    default: return "md:col-span-1 md:row-span-1";
+  }
+};
+
+const ProjectImage = ({ image, idx }: { image: string, idx: number }) => {
+  const [isLoaded, setIsLoaded] = React.useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: (idx % 6) * 0.1 }}
+      className={`group relative overflow-hidden rounded-2xl bg-pearl-100 ${getBentoClass(idx)}`}
+    >
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-pearl-50 z-10">
+          <div className="w-10 h-10 border-4 border-charcoal-200 border-t-charcoal-800 rounded-full animate-spin"></div>
+        </div>
+      )}
+      <img 
+        src={image} 
+        alt={`Gill Architects Project ${idx + 1}`} 
+        fetchPriority={idx < 6 ? "high" : "auto"}
+        loading={idx < 6 ? "eager" : "lazy"}
+        onLoad={() => setIsLoaded(true)}
+        className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+      />
+      <div className="absolute inset-0 bg-charcoal-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20"></div>
+    </motion.div>
+  );
+};
 
 const ProjectsPage = () => {
-  // Placeholder project data
-  const projects = [
-    { id: 1, title: "Modern Villa in Ajit Nagar", category: "Residential", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" },
-    { id: 2, title: "Commercial Complex", category: "Commercial", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" },
-    { id: 3, title: "Farmhouse Design", category: "Residential", image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=800" },
-    { id: 4, title: "Interior Renovation", category: "Interior", image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800" },
-    { id: 5, title: "Small Plot House", category: "Residential", image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?auto=format&fit=crop&q=80&w=800" },
-    { id: 6, title: "Office Space", category: "Commercial", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" },
-  ];
-
   return (
     <>
       <>
@@ -36,26 +113,9 @@ const ProjectsPage = () => {
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project) => (
-              <InteractiveCard 
-                key={project.id} 
-                flowColor="#faf0ca" 
-                tiltIntensity={5}
-                className="overflow-hidden"
-              >
-                <div className="group relative w-full h-80 cursor-pointer [transform-style:preserve-3d]">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 [transform-style:preserve-3d]">
-                    <span className="text-charcoal-300 text-sm uppercase tracking-wider mb-1 transition-all duration-500 group-hover:[transform:translateZ(20px)]">{project.category}</span>
-                    <h3 className="text-white text-xl font-bold transition-all duration-500 group-hover:[transform:translateZ(40px)] group-hover:drop-shadow-2xl">{project.title}</h3>
-                  </div>
-                </div>
-              </InteractiveCard>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 auto-rows-[300px] md:auto-rows-[400px] grid-flow-row-dense">
+            {PROJECT_IMAGES.map((image, idx) => (
+              <ProjectImage key={idx} image={image} idx={idx} />
             ))}
           </div>
         </div>
