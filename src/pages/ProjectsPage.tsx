@@ -1,5 +1,7 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from 'lucide-react';
+import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 const PROJECT_IMAGES = [
   "https://i.ibb.co/j91XxtDN/IMG-20260606-WA0003.jpg",
@@ -59,8 +61,8 @@ const getBentoClass = (index: number) => {
   }
 };
 
-const ProjectImage = ({ image, idx }: { image: string, idx: number }) => {
-  const [isLoaded, setIsLoaded] = React.useState(false);
+const ProjectImage = ({ image, idx, onClick }: { image: string, idx: number, onClick: () => void }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <motion.div
@@ -68,7 +70,8 @@ const ProjectImage = ({ image, idx }: { image: string, idx: number }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: (idx % 6) * 0.1 }}
-      className={`group relative overflow-hidden rounded-2xl bg-pearl-100 ${getBentoClass(idx)}`}
+      className={`group relative overflow-hidden rounded-2xl bg-pearl-100 cursor-pointer ${getBentoClass(idx)}`}
+      onClick={onClick}
     >
       {!isLoaded && (
         <div className="absolute inset-0 flex items-center justify-center bg-pearl-50 z-10">
@@ -83,14 +86,148 @@ const ProjectImage = ({ image, idx }: { image: string, idx: number }) => {
         onLoad={() => setIsLoaded(true)}
         className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
       />
-      <div className="absolute inset-0 bg-charcoal-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20"></div>
+      <div className="absolute inset-0 bg-charcoal-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20 flex items-center justify-center">
+        <ZoomIn className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100" />
+      </div>
     </motion.div>
   );
 };
 
 const ProjectsPage = () => {
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedImageIndex === null) return;
+      if (e.key === 'ArrowRight') {
+        setSelectedImageIndex((prev) => (prev !== null ? (prev + 1) % PROJECT_IMAGES.length : null));
+      } else if (e.key === 'ArrowLeft') {
+        setSelectedImageIndex((prev) => (prev !== null ? (prev - 1 + PROJECT_IMAGES.length) % PROJECT_IMAGES.length : null));
+      } else if (e.key === 'Escape') {
+        setSelectedImageIndex(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImageIndex]);
+
+  // Lock body scroll when lightbox is open
+  useEffect(() => {
+    if (selectedImageIndex !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [selectedImageIndex]);
+
   return (
     <>
+      <AnimatePresence>
+        {selectedImageIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-charcoal-900/80 backdrop-blur-md"
+            onClick={() => setSelectedImageIndex(null)}
+          >
+            <TransformWrapper
+              initialScale={1}
+              minScale={1}
+              maxScale={5}
+              centerOnInit
+              wheel={{ step: 0.1 }}
+            >
+              {({ zoomIn, zoomOut, resetTransform, state }) => (
+                <React.Fragment>
+                  <div className="absolute top-6 right-6 z-50 flex items-center gap-4">
+                    <div 
+                      className="bg-charcoal-900/50 backdrop-blur-sm text-pearl-100 px-4 py-2 rounded-full font-mono text-sm tracking-widest border border-white/10 shadow-lg select-none" 
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {Math.round(state.scale * 100)}%
+                    </div>
+
+                    <button 
+                      className="w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-white/20 transition-colors shadow-lg"
+                      onClick={(e) => { e.stopPropagation(); state.scale > 1 ? resetTransform() : zoomIn(); }}
+                      title="Zoom In/Out"
+                    >
+                      {state.scale > 1 ? <ZoomOut className="w-6 h-6" /> : <ZoomIn className="w-6 h-6" />}
+                    </button>
+
+                    <button 
+                      className="w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full hover:bg-white/20 transition-colors shadow-lg"
+                      onClick={(e) => { e.stopPropagation(); setSelectedImageIndex(null); }}
+                      title="Close"
+                    >
+                      <X className="w-6 h-6" />
+                    </button>
+                  </div>
+                  
+                  {state.scale === 1 && (
+                    <button 
+                      className="absolute left-4 md:left-8 z-50 w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full focus:outline-none focus:ring-2 focus:ring-white/50 hover:bg-white/20 transition-colors shadow-lg"
+                      onClick={(e) => { 
+                        e.stopPropagation(); 
+                        setSelectedImageIndex((prev) => (prev !== null ? (prev - 1 + PROJECT_IMAGES.length) % PROJECT_IMAGES.length : null));
+                      }}
+                    >
+                      <ChevronLeft className="w-8 h-8" />
+                    </button>
+                  )}
+
+                  {state.scale === 1 && (
+                    <button 
+                      className="absolute right-4 md:right-8 z-50 w-12 h-12 flex items-center justify-center bg-white/10 text-white rounded-full focus:outline-none focus:ring-2 focus:ring-white/50 hover:bg-white/20 transition-colors shadow-lg"
+                      onClick={(e) => { 
+                        e.stopPropagation(); 
+                        setSelectedImageIndex((prev) => (prev !== null ? (prev + 1) % PROJECT_IMAGES.length : null));
+                      }}
+                    >
+                      <ChevronRight className="w-8 h-8" />
+                    </button>
+                  )}
+                  
+                  <div 
+                    className="relative w-full h-full max-w-7xl max-h-[90vh] flex items-center justify-center pointer-events-none"
+                  >
+                    <TransformComponent wrapperClass="!w-full !h-full" contentClass="!w-full !h-full flex items-center justify-center pointer-events-auto">
+                      <motion.img 
+                        key={selectedImageIndex}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        transition={{ duration: 0.3, type: "spring", stiffness: 300, damping: 30 }}
+                        src={PROJECT_IMAGES[selectedImageIndex]} 
+                        alt={`Project ${selectedImageIndex + 1}`} 
+                        className="max-w-full max-h-full object-contain rounded-lg shadow-2xl cursor-grab active:cursor-grabbing"
+                        drag={state.scale === 1 ? "x" : false}
+                        dragConstraints={{ left: 0, right: 0 }}
+                        dragElastic={0.8}
+                        onDragEnd={(e, { offset }) => {
+                          if (state.scale > 1) return;
+                          const swipe = offset.x;
+
+                          if (swipe < -50) {
+                            setSelectedImageIndex((prev) => (prev !== null ? (prev + 1) % PROJECT_IMAGES.length : null));
+                          } else if (swipe > 50) {
+                            setSelectedImageIndex((prev) => (prev !== null ? (prev - 1 + PROJECT_IMAGES.length) % PROJECT_IMAGES.length : null));
+                          }
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                      />
+                    </TransformComponent>
+                  </div>
+                </React.Fragment>
+              )}
+            </TransformWrapper>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <>
         <title>Our Projects | Gill Architects Abohar</title>
         <meta name="description" content="View our portfolio of residential and commercial projects in Abohar and surrounding areas. Modern designs, practical layouts." />
@@ -115,7 +252,7 @@ const ProjectsPage = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 auto-rows-[300px] md:auto-rows-[400px] grid-flow-row-dense">
             {PROJECT_IMAGES.map((image, idx) => (
-              <ProjectImage key={idx} image={image} idx={idx} />
+              <ProjectImage key={idx} image={image} idx={idx} onClick={() => setSelectedImageIndex(idx)} />
             ))}
           </div>
         </div>
