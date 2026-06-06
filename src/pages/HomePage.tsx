@@ -67,11 +67,13 @@ const HomePage = () => {
           <img 
             src="https://i.ibb.co/PvXqjDFB/file-000000005b04720ba7779e11279cee51.png" 
             alt="Urban Architecture Pattern Mobile" 
+            fetchPriority="high"
             className="absolute inset-0 w-full h-full object-cover lg:hidden"
           />
           <img 
             src="https://i.ibb.co/rRQ3XWRp/IMG-20260605-132311-1.png" 
             alt="Modern Luxury House Elevation Desktop" 
+            fetchPriority="high"
             className="absolute inset-0 w-full h-full object-cover hidden lg:block animate-[pulse_20s_ease-in-out_infinite_alternate]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 z-10 pointer-events-none"></div>
