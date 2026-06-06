@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Instagram, MessageCircle, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, MessageCircle, ArrowRight, Clock } from 'lucide-react';
 import { BUSINESS_INFO, SERVICES } from '../../data/business';
 
 const Footer = () => {
@@ -69,6 +69,10 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-charcoal-500 shrink-0 mt-0.5" />
                 <span>{BUSINESS_INFO.location}</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-charcoal-500 shrink-0 mt-0.5" />
+                <span>{BUSINESS_INFO.timings}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-charcoal-500 shrink-0" />

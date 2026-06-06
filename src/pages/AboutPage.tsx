@@ -87,6 +87,8 @@ const AboutPage = () => {
                   <img 
                     src={member.image} 
                     alt={member.name} 
+                    fetchPriority="high"
+                    loading="eager"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
@@ -142,6 +144,8 @@ const AboutPage = () => {
                 <img 
                   src="https://i.ibb.co/4RRFB4n5/file-0000000043bc7207a99532ea18f66c4d.png" 
                   alt="Special Award in Dream Home Category 2025" 
+                  fetchPriority="high"
+                  loading="eager"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -149,6 +153,8 @@ const AboutPage = () => {
                 <img 
                   src="https://i.ibb.co/0VZyzrGX/IMG-20260606-203644.jpg" 
                   alt="Ar Manjot Singh Gill receiving the award" 
+                  fetchPriority="high"
+                  loading="eager"
                   className="w-full h-full object-cover"
                 />
               </div>

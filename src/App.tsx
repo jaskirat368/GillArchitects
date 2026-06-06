@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createBrowserRouter, RouterProvider, ScrollRestoration, Outlet } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
@@ -18,6 +18,29 @@ import NotFoundPage from './pages/NotFoundPage';
 import ScrollToTop from './components/layout/ScrollToTop';
 import { LoadingScreen } from './components/LoadingScreen';
 import { motion, AnimatePresence } from 'motion/react';
+
+const PRELOAD_IMAGES = [
+  // Hero Images
+  "https://i.ibb.co/rRQ3XWRp/IMG-20260605-132311-1.png",
+  "https://i.ibb.co/PvXqjDFB/file-000000005b04720ba7779e11279cee51.png",
+  // Services
+  "https://i.ibb.co/XZYCd16w/9f981f6dcfdfc41be4be80618be1b625.jpg",
+  "https://i.ibb.co/Fb0LHfXR/9eb46adbf12967808e9a9ab34aca6756.jpg",
+  "https://i.ibb.co/yFJ2tggC/cf0f095e8dcb0c4bb01a9e7ef707759b.jpg",
+  "https://i.ibb.co/JWtyTc1m/d0abf53b406b5e5cac271063e61a2b08.jpg",
+  "https://i.ibb.co/GfWLH0jh/af9dbdd64edd4dcd64eb0033ff9813d7.jpg",
+  "https://i.ibb.co/Pv3Nh1Zr/e8b28f7a28f5b9db38278f68690d392b.jpg",
+  "https://i.ibb.co/Z1dJcstv/693ba9b90928fcab28ee08f92bb5e535.jpg",
+  // About Page Team
+  "https://i.ibb.co/fYL0Jkck/1780752636022-6aulvm-2-1.jpg",
+  "https://i.ibb.co/ZzjkXMqd/IMG-20260606-WA0042.jpg",
+  "https://i.ibb.co/ccbThXPR/IMG-20260606-200004.jpg",
+  "https://i.ibb.co/5xMqbftT/IMG-20260606-200025.jpg",
+  "https://i.ibb.co/hF5N1Djg/IMG-20260606-202520.png",
+  // About Page Awards
+  "https://i.ibb.co/4RRFB4n5/file-0000000043bc7207a99532ea18f66c4d.png",
+  "https://i.ibb.co/0VZyzrGX/IMG-20260606-203644.jpg"
+];
 
 const Layout = () => {
   return (
@@ -56,6 +79,14 @@ const router = createBrowserRouter([
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Preload images silently in the background while the loading screen displays
+    PRELOAD_IMAGES.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   return (
     <>

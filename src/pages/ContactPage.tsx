@@ -122,7 +122,7 @@ const ContactPage = () => {
                       <MessageCircle className="w-6 h-6 text-[#25D366]" />
                     </div>
                     <h3 className="text-lg font-bold text-charcoal-900 mb-1">WhatsApp</h3>
-                    <p className="text-sm text-charcoal-500 mb-2">24/7 Support</p>
+                    <p className="text-sm text-charcoal-500 mb-2">10:30 am - 6:00 pm<br/>(Closed On Sunday)</p>
                     <a 
                       href={`https://wa.me/${BUSINESS_INFO.whatsapp}`}
                       target="_blank"
@@ -154,8 +154,12 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-charcoal-900 mb-1">Office Location</h3>
-                      <p className="text-charcoal-600">
+                      <p className="text-charcoal-600 mb-2">
                         {BUSINESS_INFO.location}
+                      </p>
+                      <h3 className="text-sm font-bold text-charcoal-900 mb-1">Office Timings</h3>
+                      <p className="text-sm text-charcoal-600">
+                        {BUSINESS_INFO.timings}
                       </p>
                     </div>
                   </div>

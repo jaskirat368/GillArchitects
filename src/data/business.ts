@@ -7,7 +7,7 @@ export const BUSINESS_INFO = {
   instagram: "https://www.instagram.com/gill_architects?igsh=MThlOG90aXd1bXd2dQ==",
   location: "Abohar, Punjab",
   email: "gillarchitectstudio@gmail.com", // Updated email
-  timings: "24/7",
+  timings: "10:30 am - 6:00 pm (Closed On Sunday)",
 };
 
 export const SERVICES = [
