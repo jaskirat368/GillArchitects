@@ -4,7 +4,6 @@ import { motion } from 'motion/react';
 import { ArrowRight, Phone, CheckCircle2, MapPin, Ruler, Home, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
 import { BUSINESS_INFO, SERVICES } from '../data/business';
-import { Helmet } from 'react-helmet-async';
 import InteractiveCard from '../components/InteractiveCard';
 
 const HomePage = () => {
@@ -35,7 +34,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Helmet>
+      <>
         <title>Gill Architects | Best Architect in Abohar | Modern House Planning & 3D Elevation</title>
         <meta name="description" content="Looking for the best architect in Abohar? Gill Architects offers premium architectural planning services, modern house design, 3D elevation, and luxury interior design in Punjab and surrounding areas." />
         <meta name="keywords" content="architect in abohar, best architect in abohar, architectural designer, residential architect, commercial architect, modern house design, 3d elevation design, interior designer in abohar, 2d floor plan, house planner in abohar" />
@@ -59,7 +58,7 @@ const HomePage = () => {
             }
           `}
         </script>
-      </Helmet>
+      </>
 
       {/* Hero Section */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">

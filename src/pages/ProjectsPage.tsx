@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import InteractiveCard from '../components/InteractiveCard';
 
 const ProjectsPage = () => {
@@ -15,10 +14,10 @@ const ProjectsPage = () => {
 
   return (
     <>
-      <Helmet>
+      <>
         <title>Our Projects | Gill Architects Abohar</title>
         <meta name="description" content="View our portfolio of residential and commercial projects in Abohar and surrounding areas. Modern designs, practical layouts." />
-      </Helmet>
+      </>
 
       <div className="bg-charcoal-900 text-white pt-36 pb-20 md:pt-48 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/80 via-charcoal-900/20 to-transparent z-0"></div>

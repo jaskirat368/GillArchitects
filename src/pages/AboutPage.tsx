@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 import { CheckCircle2 } from 'lucide-react';
 import InteractiveCard from '../components/InteractiveCard';
@@ -7,11 +6,11 @@ import InteractiveCard from '../components/InteractiveCard';
 const AboutPage = () => {
   return (
     <>
-      <Helmet>
+      <>
         <title>About Gill Architects | The Best Architect in Abohar & Punjab</title>
         <meta name="description" content="Learn about Gill Architects, the leading architectural planning firm and interior designer in Abohar. We serve Fazilka, Sri Ganganagar, and all of Punjab." />
         <meta name="keywords" content="architect in abohar, best architect in abohar, architect in fazilka, architect in sri ganganagar, architect in punjab, interior designer in abohar, Gill Architects Punjab" />
-      </Helmet>
+      </>
 
       <div className="bg-charcoal-900 text-white pt-36 pb-20 md:pt-48 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/80 via-charcoal-900/20 to-transparent z-0"></div>

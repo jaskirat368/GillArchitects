@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Phone, Mail, MapPin, Clock, MessageCircle, ChevronDown, Instagram } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/business';
 import InteractiveCard from '../components/InteractiveCard';
@@ -32,11 +31,11 @@ const ContactPage = () => {
 
   return (
     <>
-      <Helmet>
+      <>
         <title>Contact Gill Architects | Best Architect in Abohar</title>
         <meta name="description" content="Contact Gill Architects today. As the best architect in Abohar, we offer 2D floor plans, 3D elevation, and interior design across Fazilka, Sri Ganganagar, and Punjab." />
         <meta name="keywords" content="contact architect in abohar, architect near me, house planner in abohar, 3d designer in abohar, building consultant in abohar, Gill Architects Abohar" />
-      </Helmet>
+      </>
 
       <div className="bg-charcoal-900 text-white pt-36 pb-20 md:pt-48 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/80 via-charcoal-900/20 to-transparent z-0"></div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import InteractiveCard from '../components/InteractiveCard';
 
@@ -37,10 +36,10 @@ const BlogPage = () => {
 
   return (
     <>
-      <Helmet>
+      <>
         <title>Architecture Blog | Gill Architects</title>
         <meta name="description" content="Read our latest insights on house planning, construction tips, and design trends in Abohar." />
-      </Helmet>
+      </>
 
       <div className="bg-charcoal-900 text-white pt-36 pb-20 md:pt-48 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/80 via-charcoal-900/20 to-transparent z-0"></div>

@@ -10,12 +10,14 @@
       <stop offset="100%" stop-color="#dfce92"/>
     </linearGradient>
   </defs>
-  <rect width="512" height="512" fill="url(#bg)" rx="112"/>
-  <path d="M 336 216 L 336 144 L 176 144 C 158.3 144 144 158.3 144 176 L 144 336 C 144 353.7 158.3 368 176 368 L 336 368 C 353.7 368 368 353.7 368 336 L 368 256 L 240 256 L 240 296 L 328 296 L 328 328 L 184 328 L 184 184 L 296 184 L 296 216 Z" fill="url(#gold)"/>
-  
-  <!-- Architectural dot accents -->
-  <circle cx="144" cy="144" r="16" fill="url(#gold)" />
-  <circle cx="368" cy="144" r="16" fill="url(#gold)" />
-  <circle cx="144" cy="368" r="16" fill="url(#gold)" />
-  <circle cx="368" cy="368" r="16" fill="url(#gold)" />
+  <rect width="512" height="512" fill="url(#bg)" rx="96"/>
+  <g transform="translate(256, 256) scale(1.6) translate(-256, -256)">
+    <path d="M 336 216 L 336 144 L 176 144 C 158.3 144 144 158.3 144 176 L 144 336 C 144 353.7 158.3 368 176 368 L 336 368 C 353.7 368 368 353.7 368 336 L 368 256 L 240 256 L 240 296 L 328 296 L 328 328 L 184 328 L 184 184 L 296 184 L 296 216 Z" fill="url(#gold)"/>
+    
+    <!-- Architectural dot accents -->
+    <circle cx="144" cy="144" r="16" fill="url(#gold)" />
+    <circle cx="368" cy="144" r="16" fill="url(#gold)" />
+    <circle cx="144" cy="368" r="16" fill="url(#gold)" />
+    <circle cx="368" cy="368" r="16" fill="url(#gold)" />
+  </g>
 </svg>

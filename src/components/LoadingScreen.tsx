@@ -21,7 +21,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
             setTimeout(() => {
               onComplete();
             }, 800); // smooth exit transition
-          }, 500);
+          }, 1200); // clear duration to let progress read 100% nicely
           return 100;
         }
 
@@ -140,9 +140,9 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         <div className="flex flex-col gap-1.5">
           <span className="flex items-center gap-2 text-white/90">
             <span className="inline-block w-1.5 h-1.5 bg-[#faf0ca] rounded-full animate-pulse" />
-            ENGINEERING SECURE CONSOLE
+            STUDIO ENGINE ONLINE
           </span>
-          <span>LOC: 30° 07' 11" N / 74° 11' 29" E • PUNJAB</span>
+          <span>GILL ARCHITECTS • ABOHAR, PUNJAB</span>
         </div>
         <div className="text-right flex flex-col gap-1.5">
           <span>SCALE • 1:50</span>
@@ -236,27 +236,20 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
             </svg>
           </div>
 
-          {/* Monogram Brand text layout */}
-          <div className="text-center w-full">
+          {/* Monogram Brand text layout - exact Header visual identical */}
+          <div className="text-center w-full flex flex-col items-center">
             <motion.div 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="font-display text-2xl md:text-3xl font-black tracking-[0.25em] text-white flex items-center justify-center gap-2"
-              style={{ fontFamily: 'var(--font-sans)' }}
+              className="flex flex-col items-center"
             >
-              <span>GILL</span>
-              <span className="w-px h-6 bg-[#faf0ca]/45 inline-block" />
-              <span className="font-light text-pearl-100 tracking-[0.2em]">ARCHITECTS</span>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.7 }}
-              transition={{ delay: 0.7, duration: 0.6 }}
-              className="text-[9px] uppercase tracking-[0.45em] text-charcoal-400 mt-2.5 font-bold"
-            >
-              12+ Years of Excellence • Est. 2014
+              <div className="font-display text-[22px] leading-none tracking-[0.15em] flex items-center justify-center gap-1.5 text-white">
+                <span className="font-extrabold">GILL</span>
+                <span className="w-px h-5 bg-pearl-300/40"></span>
+                <span className="font-light">ARCHITECTS</span>
+              </div>
+              <span className="text-[9px] font-sans uppercase tracking-[0.4em] mt-1.5 ml-0.5 text-charcoal-400 font-bold">Abohar</span>
             </motion.div>
           </div>
 

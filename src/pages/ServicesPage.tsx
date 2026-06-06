@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { SERVICES } from '../data/business';
 import { ArrowRight, Ruler } from 'lucide-react';
@@ -8,11 +7,11 @@ import InteractiveCard from '../components/InteractiveCard';
 const ServicesPage = () => {
   return (
     <>
-      <Helmet>
+      <>
         <title>Premium Architectural Services in Abohar & Punjab | Gill Architects</title>
         <meta name="description" content="Explore our premium architectural services: 2D Floor Planning, 3D Elevation Design, Interior Design, and Custom House Design. We are the top building planners in Abohar." />
         <meta name="keywords" content="architectural services, house design services, building design services, 3d elevation design, interior designer, floor plan designer, architect in punjab" />
-      </Helmet>
+      </>
 
       <div className="bg-charcoal-900 text-white pt-36 pb-20 md:pt-48 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/80 via-charcoal-900/20 to-transparent z-0"></div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { SERVICES, BUSINESS_INFO } from '../data/business';
 import { Phone, ArrowRight, AlertTriangle, CheckCircle } from 'lucide-react';
 
@@ -14,10 +13,10 @@ const ServiceDetailPage = () => {
 
   return (
     <>
-      <Helmet>
+      <>
         <title>{`${service.title} in Abohar | Gill Architects`}</title>
         <meta name="description" content={`Professional ${service.title} services in Abohar by Gill Architects. ${service.shortDesc}`} />
-      </Helmet>
+      </>
 
       <div className="relative h-[50vh] min-h-[400px]">
         <img 

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { createBrowserRouter, RouterProvider, ScrollRestoration, Outlet } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import StickyCTA from './components/layout/StickyCTA';
@@ -59,7 +58,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <HelmetProvider>
+    <>
       <AnimatePresence mode="wait">
         {isLoading ? (
           <motion.div
@@ -81,6 +80,6 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
-    </HelmetProvider>
+    </>
   );
 }

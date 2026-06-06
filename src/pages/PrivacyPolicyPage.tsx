@@ -1,14 +1,13 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { BUSINESS_INFO } from '../data/business';
 
 const PrivacyPolicyPage = () => {
   return (
     <>
-      <Helmet>
+      <>
         <title>Privacy Policy | {BUSINESS_INFO.name}</title>
         <meta name="description" content={`Privacy Policy for ${BUSINESS_INFO.name}.`} />
-      </Helmet>
+      </>
       
       <main className="pt-32 pb-24 bg-pearl-50 min-h-screen">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
