@@ -50,7 +50,7 @@ const AboutPage = () => {
                 image: "https://i.ibb.co/fYL0Jkck/1780752636022-6aulvm-2-1.jpg"
               },
               {
-                name: "Sahib Gill",
+                name: "Sahil Gill",
                 role: "Engineer",
                 qualification: "Bachelor of Technology in Civil Engineering",
                 image: "https://i.ibb.co/ZzjkXMqd/IMG-20260606-WA0042.jpg"
