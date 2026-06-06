@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Instagram, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, MessageCircle, ArrowRight } from 'lucide-react';
 import { BUSINESS_INFO, SERVICES } from '../../data/business';
 
 const Footer = () => {
@@ -26,8 +26,11 @@ const Footer = () => {
               Modern architectural authority in Abohar. We design spaces that blend structural intelligence with aesthetic elegance.
             </p>
             <div className="flex gap-4">
-              <a href={BUSINESS_INFO.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-charcoal-800 flex items-center justify-center hover:bg-charcoal-700 hover:text-[#faf0ca] transition-colors">
+              <a href={BUSINESS_INFO.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-charcoal-800 flex items-center justify-center hover:bg-charcoal-700 hover:text-[#faf0ca] transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
+              </a>
+              <a href={`https://wa.me/${BUSINESS_INFO.whatsapp}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-charcoal-800 flex items-center justify-center hover:bg-charcoal-700 hover:text-[#25D366] transition-colors" aria-label="WhatsApp">
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </div>

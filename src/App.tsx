@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { createBrowserRouter, RouterProvider, ScrollRestoration, Outlet } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/layout/Header';
@@ -16,6 +17,8 @@ import TermsOfServicePage from './pages/TermsOfServicePage';
 import NotFoundPage from './pages/NotFoundPage';
 
 import ScrollToTop from './components/layout/ScrollToTop';
+import { LoadingScreen } from './components/LoadingScreen';
+import { motion, AnimatePresence } from 'motion/react';
 
 const Layout = () => {
   return (
@@ -53,9 +56,31 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <HelmetProvider>
-      <RouterProvider router={router} />
+      <AnimatePresence mode="wait">
+        {isLoading ? (
+          <motion.div
+            key="loader"
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }}
+            className="fixed inset-0 z-[9999]"
+          >
+            <LoadingScreen onComplete={() => setIsLoading(false)} />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="content"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <RouterProvider router={router} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </HelmetProvider>
   );
 }
