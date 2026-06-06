@@ -336,9 +336,10 @@ const HomePage = () => {
               
               <div className="space-y-6">
                 {[
+                  "Vastu-Compliant Space Optimization for Indian Homes",
+                  "Trusted Local Experts with 500+ Satisfied Clients",
                   "Structural Precision & Safety First",
                   "Modern 3D Visualization before Construction",
-                  "Space Optimization for Small & Large Plots",
                   "Transparent Communication & Timely Delivery"
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4">

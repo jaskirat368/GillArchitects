@@ -17,6 +17,7 @@ const SERVICES_OPTIONS = [
 const ContactPage = () => {
   const [selectedService, setSelectedService] = useState("General Inquiry");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -28,6 +29,39 @@ const ContactPage = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    // We append the service programmatically into formData to be sent
+    formData.append('service', selectedService);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/gillarchitectstudio@gmail.com", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        setFormStatus('success');
+        form.reset();
+        setSelectedService("General Inquiry");
+        setTimeout(() => setFormStatus('idle'), 5000);
+      } else {
+        throw new Error("Failed to submit");
+      }
+    } catch (error) {
+      setFormStatus('error');
+      setTimeout(() => setFormStatus('idle'), 5000);
+    }
+  };
 
   return (
     <>
@@ -143,13 +177,25 @@ const ContactPage = () => {
                 </div>
                 <h2 className="font-display text-4xl md:text-5xl font-extrabold text-charcoal-900 mb-6 tracking-tight">Send a Message</h2>
                 <form 
-                  action="https://formsubmit.co/jaskiratforbusiness@gmail.com" 
-                  method="POST"
+                  onSubmit={handleSubmit}
                   className="space-y-6"
                 >
                   <input type="text" name="_honey" style={{ display: 'none' }} />
                   <input type="hidden" name="_captcha" value="false" />
-                  <input type="hidden" name="_next" value={`${typeof window !== 'undefined' ? window.location.origin : ''}/contact?success=true`} />
+                  <input type="hidden" name="_subject" value="New Contact Form Submission - Gill Architects" />
+                  <input type="hidden" name="_template" value="box" />
+
+                  {formStatus === 'success' && (
+                    <div className="bg-[#25D366]/10 border border-[#25D366] text-[#25D366] px-4 py-3 rounded-xl flex items-center justify-center font-medium">
+                      Message sent successfully! We'll get back to you soon.
+                    </div>
+                  )}
+
+                  {formStatus === 'error' && (
+                    <div className="bg-red-500/10 border border-red-500 text-red-600 px-4 py-3 rounded-xl flex items-center justify-center font-medium">
+                      Something went wrong. Please try again or call us.
+                    </div>
+                  )}
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -159,31 +205,46 @@ const ContactPage = () => {
                         id="name" 
                         name="name" 
                         required
-                        className="w-full px-4 py-3 rounded-full border border-charcoal-300 focus:border-charcoal-900 focus:ring-1 focus:ring-charcoal-900 outline-none transition-all"
+                        disabled={formStatus === 'submitting'}
+                        className="w-full px-4 py-3 rounded-full border border-charcoal-300 focus:border-charcoal-900 focus:ring-1 focus:ring-charcoal-900 outline-none transition-all disabled:opacity-50"
                         placeholder="Your Name"
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-charcoal-700 mb-2">Phone</label>
+                      <label htmlFor="email" className="block text-sm font-medium text-charcoal-700 mb-2">Email</label>
                       <input 
-                        type="tel" 
-                        id="phone" 
-                        name="phone" 
+                        type="email" 
+                        id="email" 
+                        name="email" 
                         required
-                        className="w-full px-4 py-3 rounded-full border border-charcoal-300 focus:border-charcoal-900 focus:ring-1 focus:ring-charcoal-900 outline-none transition-all"
-                        placeholder="Your Phone Number"
+                        disabled={formStatus === 'submitting'}
+                        className="w-full px-4 py-3 rounded-full border border-charcoal-300 focus:border-charcoal-900 focus:ring-1 focus:ring-charcoal-900 outline-none transition-all disabled:opacity-50"
+                        placeholder="Your Email Address"
                       />
                     </div>
                   </div>
 
                   <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-charcoal-700 mb-2">Phone</label>
+                    <input 
+                      type="tel" 
+                      id="phone" 
+                      name="phone" 
+                      required
+                      disabled={formStatus === 'submitting'}
+                      className="w-full px-4 py-3 rounded-full border border-charcoal-300 focus:border-charcoal-900 focus:ring-1 focus:ring-charcoal-900 outline-none transition-all disabled:opacity-50"
+                      placeholder="Your Phone Number"
+                    />
+                  </div>
+
+                  <div>
                     <label className="block text-sm font-medium text-charcoal-700 mb-2">Service Interested In</label>
                     <div className="relative" ref={dropdownRef}>
-                      <input type="hidden" name="service" value={selectedService} />
                       <button
                         type="button"
+                        disabled={formStatus === 'submitting'}
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                        className="w-full px-4 py-3 rounded-full border border-charcoal-300 focus:border-charcoal-900 focus:ring-1 focus:ring-charcoal-900 outline-none bg-white flex justify-between items-center transition-all text-left"
+                        className="w-full px-4 py-3 rounded-full border border-charcoal-300 focus:border-charcoal-900 focus:ring-1 focus:ring-charcoal-900 outline-none bg-white flex justify-between items-center transition-all text-left disabled:opacity-50"
                       >
                         <span className={selectedService ? "text-charcoal-900" : "text-charcoal-500"}>
                           {selectedService || "Select a service..."}
@@ -218,16 +279,25 @@ const ContactPage = () => {
                       name="message" 
                       rows={4}
                       required
-                      className="w-full px-4 py-3 rounded-full border border-charcoal-300 focus:border-charcoal-900 focus:ring-1 focus:ring-charcoal-900 outline-none transition-all"
+                      disabled={formStatus === 'submitting'}
+                      className="w-full px-4 py-3 rounded-3xl border border-charcoal-300 focus:border-charcoal-900 focus:ring-1 focus:ring-charcoal-900 outline-none transition-all resize-none disabled:opacity-50"
                       placeholder="Tell us about your project requirements..."
                     ></textarea>
                   </div>
 
                   <button 
                     type="submit"
-                    className="w-full bg-charcoal-900 text-white font-bold py-4 rounded-full hover:bg-charcoal-800 transition-colors shadow-lg"
+                    disabled={formStatus === 'submitting'}
+                    className="w-full bg-charcoal-900 text-white font-bold py-4 rounded-full hover:bg-charcoal-800 transition-colors shadow-lg disabled:opacity-70 disabled:cursor-wait flex justify-center items-center gap-2"
                   >
-                    Send Message
+                    {formStatus === 'submitting' ? (
+                      <>
+                        <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                        Sending...
+                      </>
+                    ) : (
+                      "Send Message"
+                    )}
                   </button>
                 </form>
               </div>

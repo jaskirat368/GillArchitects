@@ -6,7 +6,7 @@ export const BUSINESS_INFO = {
   whatsapps: ["9888617761"],
   instagram: "https://www.instagram.com/gill_architects?igsh=MThlOG90aXd1bXd2dQ==",
   location: "Abohar, Punjab",
-  email: "contact@gillarchitects.com", // Placeholder based on domain, can be updated
+  email: "gillarchitectstudio@gmail.com", // Updated email
   timings: "24/7",
 };
 
@@ -14,18 +14,18 @@ export const SERVICES = [
   {
     id: "architectural-design",
     title: "Architectural Design",
-    shortDesc: "Comprehensive architectural planning for modern living.",
-    fullDesc: "Our core architectural design service focuses on creating structures that are both aesthetically stunning and functionally superior. We blend modern trends with practical living requirements.",
+    shortDesc: "Vastu-compliant, comprehensive architectural planning.",
+    fullDesc: "Our core architectural design service focuses on creating structures that are both aesthetically stunning and functionally superior. We blend modern trends with practical living requirements, ensuring all our Indian home designs are strictly Vastu friendly.",
     icon: "Ruler",
-    image: "https://i.ibb.co/ccY1ZGqB/9eb46adbf12967808e9a9ab34aca6756.jpg",
+    image: "https://i.ibb.co/XZYCd16w/9f981f6dcfdfc41be4be80618be1b625.jpg",
   },
   {
     id: "2d-floor-planning",
     title: "2D Floor Planning",
-    shortDesc: "Optimized space planning for maximum utility and flow.",
-    fullDesc: "Precision 2D layouts that maximize every inch of your plot. We ensure proper ventilation, natural light, and seamless movement flow throughout the home.",
+    shortDesc: "Optimized, Vastu-friendly space planning.",
+    fullDesc: "Precision 2D layouts that maximize every inch of your plot in accordance with Vastu principles. We ensure proper ventilation, natural light, and seamless movement flow throughout the home.",
     icon: "Map",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1200",
+    image: "https://i.ibb.co/Fb0LHfXR/9eb46adbf12967808e9a9ab34aca6756.jpg",
   },
   {
     id: "3d-elevation-design",
@@ -54,10 +54,10 @@ export const SERVICES = [
   {
     id: "commercial-projects",
     title: "Commercial Projects",
-    shortDesc: "Strategic design for retail, office, and commercial spaces.",
-    fullDesc: "We design commercial spaces that attract customers and optimize workflow. From showrooms to office complexes, we understand business needs.",
+    shortDesc: "Strategic, Vastu-compliant design for retail & office spaces.",
+    fullDesc: "We design commercial spaces that attract customers and optimize workflow. From showrooms to office complexes, we understand business needs while applying practical Vastu for prosperity.",
     icon: "Building2",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200",
+    image: "https://i.ibb.co/Pv3Nh1Zr/e8b28f7a28f5b9db38278f68690d392b.jpg",
   },
   {
     id: "construction-drawings",
