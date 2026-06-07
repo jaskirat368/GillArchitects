@@ -28,6 +28,8 @@ const Header = () => {
     { name: 'Services', path: '/services' },
     { name: 'Projects', path: '/projects' },
     { name: 'Service Areas', path: '/service-areas' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'FAQ', path: '/faq' },
     { name: 'Contact', path: '/contact' },
   ];
 

@@ -74,12 +74,12 @@ const BlogPage = () => {
                     <span>{post.date}</span>
                   </div>
                   <h2 className="text-2xl font-bold text-charcoal-900 mb-3 transition-all duration-500 group-hover:[transform:translateZ(40px)] group-hover:drop-shadow-xl inline-block">
-                    <Link to="#" className="group-hover:text-charcoal-600 transition-colors">{post.title}</Link>
+                    <Link to={`/blog/${post.id}`} className="group-hover:text-charcoal-600 transition-colors">{post.title}</Link>
                   </h2>
                   <p className="text-charcoal-600 mb-6 flex-grow">
                     {post.excerpt}
                   </p>
-                  <Link to="#" className="text-charcoal-900 font-semibold hover:underline">
+                  <Link to={`/blog/${post.id}`} className="text-charcoal-900 font-semibold hover:underline">
                     Read Article
                   </Link>
                 </article>

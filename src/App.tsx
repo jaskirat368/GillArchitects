@@ -15,6 +15,9 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
 import NotFoundPage from './pages/NotFoundPage';
 
+import FaqPage from './pages/FaqPage';
+import BlogPostPage from './pages/BlogPostPage';
+
 import ScrollToTop from './components/layout/ScrollToTop';
 import { LoadingScreen } from './components/LoadingScreen';
 import { motion, AnimatePresence } from 'motion/react';
@@ -70,6 +73,8 @@ const router = createBrowserRouter([
       { path: 'projects', element: <ProjectsPage /> },
       { path: 'service-areas', element: <ServiceAreasPage /> },
       { path: 'blog', element: <BlogPage /> },
+      { path: 'blog/:id', element: <BlogPostPage /> },
+      { path: 'faq', element: <FaqPage /> },
       { path: 'contact', element: <ContactPage /> },
       { path: 'privacy-policy', element: <PrivacyPolicyPage /> },
       { path: 'terms-of-service', element: <TermsOfServicePage /> },

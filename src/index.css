@@ -60,3 +60,24 @@
     }
   }
 }
+
+@layer base {
+  .blog-content h2 {
+    @apply font-display text-3xl font-bold text-charcoal-900 mt-10 mb-4;
+  }
+  .blog-content h3 {
+    @apply font-display text-2xl font-bold text-charcoal-900 mt-8 mb-3;
+  }
+  .blog-content p {
+    @apply text-charcoal-700 text-lg leading-relaxed mb-6;
+  }
+  .blog-content a {
+    @apply text-charcoal-900 font-bold underline hover:text-charcoal-600 transition-colors;
+  }
+  .blog-content ul {
+    @apply list-disc pl-6 mb-6 text-charcoal-700 text-lg space-y-2;
+  }
+  .blog-content li {
+    @apply leading-relaxed;
+  }
+}
