@@ -129,7 +129,7 @@ const FaqPage = () => {
                 Call Now
               </a>
               <Link 
-                to="/contact"
+                to="/contact#contact-form"
                 className="bg-white text-charcoal-900 border border-pearl-200 px-8 py-4 rounded-full font-semibold hover:bg-pearl-50 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-xl hover:ring-4 hover:ring-charcoal-900/10 flex items-center gap-2"
               >
                 <MessageCircle className="w-5 h-5" />

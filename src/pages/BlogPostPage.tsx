@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Navigate, Link } from 'react-router-dom';
+import { useParams, Navigate, Link, useNavigate } from 'react-router-dom';
 import { ChevronLeft, Calendar, User, Clock } from 'lucide-react';
 import SEO from '../components/SEO';
 import { BUSINESS_INFO } from '../data/business';
@@ -30,7 +30,7 @@ export const posts = [
       <h3>4. Future-Proofing the Design</h3>
       <p>Always plan for the future. Consider adding an extra provision for a room, a flexible layout for growing families, or designing foundations robust enough to handle an extra floor later on.</p>
       
-      <p>At Gill Architects, we handle all these technicalities so you don't have to. <a href="/contact">Book a consultation</a> today to get started on your dream home.</p>
+      <p>At Gill Architects, we handle all these technicalities so you don't have to. <a href="/contact#contact-form">Book a consultation</a> today to get started on your dream home.</p>
     `
   },
   {
@@ -115,18 +115,30 @@ export const posts = [
       <h3>4. Modern Colonial Fusion</h3>
       <p>A beautiful trend emerging in luxury villas is blending modern clean lines with classic colonial elements—such as subtle arches, sloped roof segments with shingles, and elegant wrought-iron balcony railings.</p>
       
-      <p>Looking to build a home that stands out? Let Gill Architects design a modern facade that perfectly captures your style. <a href="/contact">Contact us today</a>.</p>
+      <p>Looking to build a home that stands out? Let Gill Architects design a modern facade that perfectly captures your style. <a href="/contact#contact-form">Contact us today</a>.</p>
     `
   }
 ];
 
 const BlogPostPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const post = posts.find(p => p.id === Number(id));
 
   if (!post) {
     return <Navigate to="/blog" replace />;
   }
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName.toLowerCase() === 'a') {
+      const href = target.getAttribute('href');
+      if (href && href.startsWith('/')) {
+        e.preventDefault();
+        navigate(href);
+      }
+    }
+  };
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -190,6 +202,7 @@ const BlogPostPage = () => {
           <div 
             className="blog-content"
             dangerouslySetInnerHTML={{ __html: post.content }}
+            onClick={handleLinkClick}
           />
 
           <div className="mt-16 pt-8 border-t border-pearl-200">
@@ -199,7 +212,7 @@ const BlogPostPage = () => {
                 Turn these architectural insights into reality. Book a consultation with Gill Architects to design your perfect home.
               </p>
               <Link 
-                to="/contact"
+                to="/contact#contact-form"
                 className="inline-block bg-charcoal-900 text-white px-8 py-4 rounded-full font-semibold hover:bg-charcoal-800 transition-all duration-300 hover:-translate-y-1 shadow-lg"
               >
                 Book Consultation
