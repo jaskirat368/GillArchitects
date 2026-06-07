@@ -109,7 +109,7 @@ const ServiceDetailPage = () => {
                     WhatsApp Us
                   </a>
                   <Link 
-                    to="/contact"
+                    to="/contact#contact-form"
                     className="block w-full border border-charcoal-600 text-charcoal-300 text-center py-3 rounded-full font-medium hover:bg-charcoal-800 transition-colors"
                   >
                     Request Quote

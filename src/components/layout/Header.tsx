@@ -77,7 +77,7 @@ const Header = () => {
             <span>{BUSINESS_INFO.phone}</span>
           </a>
           <Link
-            to="/contact"
+            to="/contact#contact-form"
             className="bg-charcoal-900 text-white px-6 py-2.5 text-sm font-medium rounded-full hover:bg-charcoal-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex items-center gap-2"
           >
             Get Quote <ArrowRight className="w-4 h-4" />
@@ -124,7 +124,7 @@ const Header = () => {
                   <Phone className="w-4 h-4" /> Call Us
                 </a>
                 <Link
-                  to="/contact"
+                  to="/contact#contact-form"
                   className="flex items-center justify-center gap-2 w-full py-3 bg-charcoal-900 text-white rounded-full font-medium"
                 >
                   Request Quote

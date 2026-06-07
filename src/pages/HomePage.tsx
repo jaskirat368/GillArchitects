@@ -65,7 +65,7 @@ const HomePage = () => {
         {/* Background Layer */}
         <div className="absolute inset-0 z-0 bg-charcoal-950">
           <img 
-            src="https://i.ibb.co/PvXqjDFB/file-000000005b04720ba7779e11279cee51.png" 
+            src="https://i.ibb.co/5hGMGxYk/IMG-20260607-120142.png" 
             alt="Urban Architecture Pattern Mobile" 
             fetchPriority="high"
             className="absolute inset-0 w-full h-full object-cover lg:hidden"
@@ -84,6 +84,18 @@ const HomePage = () => {
           ></div>
         </div>
 
+        {/* Dynamic Glowing Orbs / Effects */}
+        <motion.div 
+          animate={{ x: [0, 50, 0], y: [0, -30, 0], opacity: [0.3, 0.6, 0.3] }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#faf0ca]/20 rounded-full blur-[120px] pointer-events-none z-20 hidden md:block"
+        />
+        <motion.div 
+          animate={{ x: [0, -40, 0], y: [0, 40, 0], opacity: [0.2, 0.5, 0.2] }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+          className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-pearl-200/20 rounded-full blur-[100px] pointer-events-none z-20 hidden md:block"
+        />
+
         {/* Content Container */}
         <div className="container mx-auto px-5 md:px-8 relative z-30 flex flex-col items-start text-left pt-32 pb-24">
           
@@ -95,18 +107,24 @@ const HomePage = () => {
           >
             {/* Super Heading */}
             <div className="inline-flex items-center justify-center gap-4 mb-6 w-full">
-              <span className="w-12 md:w-24 h-[1px] bg-gradient-to-l from-[#faf0ca] to-transparent"></span>
+              <span className="w-12 md:w-24 h-[1px] bg-gradient-to-l from-[#faf0ca] to-transparent relative overflow-hidden">
+                <motion.span animate={{ x: ['-100%', '100%'] }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} className="absolute inset-0 bg-white/50 w-full h-full" />
+              </span>
               <span className="text-[#faf0ca] text-xs md:text-sm lg:text-base font-sans uppercase tracking-[0.4em] font-bold">GILL ARCHITECTS</span>
-              <span className="w-12 md:w-24 h-[1px] bg-gradient-to-r from-[#faf0ca] to-transparent"></span>
+              <span className="w-12 md:w-24 h-[1px] bg-gradient-to-r from-[#faf0ca] to-transparent relative overflow-hidden">
+                <motion.span animate={{ x: ['-100%', '100%'] }} transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 1 }} className="absolute inset-0 bg-white/50 w-full h-full" />
+              </span>
             </div>
 
             {/* Main Title */}
-            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-extrabold text-white leading-[1.1] tracking-tight mb-8 text-left">
-              <span className="block drop-shadow-2xl">MODERN</span>
-              <span className="block drop-shadow-2xl">DESIGN</span>
-              <span className="block text-[#faf0ca]/60 font-light drop-shadow-xl text-3xl sm:text-5xl my-2 sm:my-3">&amp;</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-pearl-100 drop-shadow-2xl">PROFESSIONAL</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-[#faf0ca] to-[#faf0ca] drop-shadow-lg pr-0">ARCHITECTURE</span>
+            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-extrabold text-white leading-[1.1] tracking-tight mb-8 text-left relative">
+              <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="block drop-shadow-2xl">MODERN</motion.span>
+              <motion.span initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="block drop-shadow-2xl">DESIGN</motion.span>
+              <motion.span initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.7 }} className="block text-[#faf0ca]/60 font-light drop-shadow-xl text-3xl sm:text-5xl my-2 sm:my-3">&amp;</motion.span>
+              <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }} className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-pearl-100 drop-shadow-2xl">PROFESSIONAL</motion.span>
+              <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.1 }} className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-[#faf0ca] to-[#faf0ca] drop-shadow-lg pr-0 relative">
+                ARCHITECTURE
+              </motion.span>
             </h1>
 
             {/* Glassmorphism description card */}
@@ -144,36 +162,53 @@ const HomePage = () => {
             </motion.div>
             
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 items-center justify-start w-full sm:w-auto mt-4">
-              <a 
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.5, duration: 0.8 }}
+              className="flex flex-col sm:flex-row gap-4 items-center justify-start w-full sm:w-auto mt-4"
+            >
+              <motion.a 
                 href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
-                className="w-full sm:w-48 group relative overflow-hidden bg-white text-charcoal-900 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:-translate-y-1 flex items-center justify-center gap-2 cursor-pointer"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                className="w-full sm:w-48 group relative overflow-hidden bg-white text-charcoal-900 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] flex items-center justify-center gap-2 cursor-pointer shadow-xl"
               >
                 <div className="absolute inset-0 w-full h-full bg-[#faf0ca] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></div>
-                <Phone className="w-4 h-4 relative z-10" /> 
+                <Phone className="w-4 h-4 relative z-10 transition-transform group-hover:scale-110 group-hover:rotate-12" /> 
                 <span className="relative z-10 whitespace-nowrap">Call Now</span>
-              </a>
-              <Link 
-                to="/contact"
-                className="group w-full sm:w-48 bg-charcoal-900/40 border border-white/30 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:bg-white/10 hover:border-white hover:-translate-y-1 backdrop-blur-sm flex items-center justify-center gap-2"
+              </motion.a>
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.2 }}
+                className="w-full sm:w-48"
               >
-                <span className="whitespace-nowrap">Consultation</span> 
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
+                <Link 
+                  to="/contact#contact-form"
+                  className="group w-full block bg-charcoal-900/40 border border-white/30 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:bg-white/10 hover:border-white shadow-lg backdrop-blur-sm flex items-center justify-center gap-2 relative overflow-hidden"
+                >
+                  <span className="whitespace-nowrap relative z-10">Consultation</span> 
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                </Link>
+              </motion.div>
+            </motion.div>
           </motion.div>
         </div>
-
+        
         {/* Scroll Indicator */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-3 z-30 hidden md:flex"
+          transition={{ delay: 2.5, duration: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center z-30 pointer-events-none"
         >
-          <span className="text-[9px] uppercase tracking-[0.3em] text-white/50" style={{ writingMode: 'vertical-rl' }}>Scroll</span>
-          <div className="w-[1px] h-12 bg-white/20 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1/2 bg-pearl-300 animate-[bounce_2s_infinite]"></div>
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
+            <motion.div 
+              animate={{ y: [0, 16, 0] }} 
+              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }} 
+              className="w-1 h-2 bg-[#faf0ca] rounded-full drop-shadow-[0_0_8px_rgba(250,240,202,0.8)]" 
+            />
           </div>
         </motion.div>
       </section>
@@ -370,9 +405,9 @@ const HomePage = () => {
                 className="shadow-2xl"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Architectural Planning" 
-                  className="w-full h-auto rounded-[inherit] grayscale hover:grayscale-0 transition-all duration-500 block"
+                  src="https://i.ibb.co/mCX7Mx5d/IMG-20260606-203644.jpg" 
+                  alt="Manjot Singh Gill - Architectural Planning" 
+                  className="w-full h-auto rounded-[inherit] transition-all duration-500 block"
                 />
               </InteractiveCard>
             </div>
@@ -514,7 +549,7 @@ const HomePage = () => {
               Call Us
             </a>
             <Link 
-              to="/contact"
+              to="/contact#contact-form"
               className="bg-white text-charcoal-900 border border-pearl-200 px-8 py-4 rounded-full font-semibold hover:bg-pearl-50 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-xl hover:ring-4 hover:ring-charcoal-900/10"
             >
               Book Consultation

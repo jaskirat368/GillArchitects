@@ -22,7 +22,7 @@ import { motion, AnimatePresence } from 'motion/react';
 const PRELOAD_IMAGES = [
   // Hero Images
   "https://i.ibb.co/rRQ3XWRp/IMG-20260605-132311-1.png",
-  "https://i.ibb.co/PvXqjDFB/file-000000005b04720ba7779e11279cee51.png",
+  "https://i.ibb.co/5hGMGxYk/IMG-20260607-120142.png",
   // Services
   "https://i.ibb.co/XZYCd16w/9f981f6dcfdfc41be4be80618be1b625.jpg",
   "https://i.ibb.co/Fb0LHfXR/9eb46adbf12967808e9a9ab34aca6756.jpg",

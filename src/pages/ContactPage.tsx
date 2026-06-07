@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, MessageCircle, ChevronDown, Instagram } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/business';
 import InteractiveCard from '../components/InteractiveCard';
@@ -19,6 +20,18 @@ const ContactPage = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#contact-form') {
+      setTimeout(() => {
+        const element = document.getElementById('contact-form');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -169,6 +182,7 @@ const ContactPage = () => {
 
             {/* Contact Form */}
             <motion.div 
+              id="contact-form"
               animate={{ y: [0, -15, 0] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
               className="border border-pearl-100 shadow-2xl rounded-[2rem] overflow-hidden"

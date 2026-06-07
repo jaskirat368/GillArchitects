@@ -93,10 +93,11 @@ const InteractiveCard: React.FC<InteractiveCardProps> = ({
       {/* Flow Effect Border */}
       {showFlow && (
         <div 
-          className="absolute -inset-[2px] rounded-[inherit] pointer-events-none"
+          className="absolute -inset-[3px] rounded-[inherit] pointer-events-none"
           style={{
-            filter: `drop-shadow(0 0 6px ${flowColor}80)`,
+            filter: `drop-shadow(0 0 10px ${flowColor}) drop-shadow(0 0 20px ${flowColor}80)`,
             zIndex: 1,
+            opacity: 0.9,
           }}
         >
           <div 
@@ -106,15 +107,15 @@ const InteractiveCard: React.FC<InteractiveCardProps> = ({
               WebkitMaskComposite: 'xor',
               mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
               maskComposite: 'exclude',
-              padding: '2px', // The thickness of the flow border
+              padding: '3px',
               overflow: 'hidden',
             }}
           >
             <div 
-              className="absolute top-1/2 left-1/2 w-[200%] aspect-square -translate-x-1/2 -translate-y-1/2"
+              className="absolute top-1/2 left-1/2 w-[300%] aspect-square -translate-x-1/2 -translate-y-1/2"
               style={{
-                background: `conic-gradient(from 0deg, transparent 75%, ${flowColor}90 95%, ${flowColor} 100%)`,
-                animation: 'flowRotate 3s linear infinite',
+                background: `conic-gradient(from 0deg, transparent 40%, ${flowColor}60 70%, ${flowColor} 95%, ${flowColor} 100%)`,
+                animation: 'flowRotate 4s linear infinite',
               }}
             />
           </div>
