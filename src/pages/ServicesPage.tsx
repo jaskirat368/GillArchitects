@@ -3,15 +3,38 @@ import { Link } from 'react-router-dom';
 import { SERVICES } from '../data/business';
 import { ArrowRight, Ruler } from 'lucide-react';
 import InteractiveCard from '../components/InteractiveCard';
+import SEO from '../components/SEO';
 
 const ServicesPage = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": SERVICES.map((s, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Service",
+        "name": s.title,
+        "description": s.shortDesc,
+        "url": `https://gillarchitects.vercel.app/services/${s.id}`,
+        "provider": {
+          "@type": "Organization",
+          "name": "Gill Architects",
+          "url": "https://gillarchitects.vercel.app"
+        }
+      }
+    }))
+  };
+
   return (
     <>
-      <>
-        <title>Premium Architectural Services in Abohar & Punjab | Gill Architects</title>
-        <meta name="description" content="Explore our premium architectural services: 2D Floor Planning, 3D Elevation Design, Interior Design, and Custom House Design. We are the top building planners in Abohar." />
-        <meta name="keywords" content="architectural services, house design services, building design services, 3d elevation design, interior designer, floor plan designer, architect in punjab" />
-      </>
+      <SEO 
+        title="Premium Architectural Services in Punjab | House Planning & 3D Design"
+        description="Explore our top-tier architectural services: residential & commercial architecture, building design, 3D elevation, and luxury interior design in Abohar & Punjab."
+        keywords="architectural services in punjab, residential architecture, commercial architecture, house design services, building design services, 3d elevation design, interior designer, floor plan designer, architect in punjab, modern elevation design"
+        canonical="https://gillarchitects.vercel.app/services"
+        jsonLd={JSON.stringify(jsonLd)}
+      />
 
       <div className="bg-charcoal-900 text-white pt-36 pb-20 md:pt-48 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/80 via-charcoal-900/20 to-transparent z-0"></div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { SERVICES, BUSINESS_INFO } from '../data/business';
 import { Phone, ArrowRight, AlertTriangle, CheckCircle } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const ServiceDetailPage = () => {
   const { serviceId } = useParams();
@@ -11,12 +12,29 @@ const ServiceDetailPage = () => {
     return <Navigate to="/services" replace />;
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "provider": {
+      "@type": "Organization",
+      "name": "Gill Architects",
+      "url": "https://gillarchitects.vercel.app"
+    },
+    "description": service.fullDesc,
+    "serviceType": service.title,
+    "areaServed": "Punjab, India"
+  };
+
   return (
     <>
-      <>
-        <title>{`${service.title} in Abohar | Gill Architects`}</title>
-        <meta name="description" content={`Professional ${service.title} services in Abohar by Gill Architects. ${service.shortDesc}`} />
-      </>
+      <SEO 
+        title={`${service.title} | Premium Architects in Punjab & Abohar`}
+        description={`Professional ${service.title} services by Gill Architects in Punjab. Expert ${service.shortDesc.toLowerCase()} serving Abohar, Chandigarh, and Fazilka.`}
+        keywords={`${service.title.toLowerCase()}, architect in punjab, best architect for ${service.title.toLowerCase()}, Gill Architects project, aboahr architect`}
+        canonical={`https://gillarchitects.vercel.app/services/${service.id}`}
+        jsonLd={JSON.stringify(jsonLd)}
+      />
 
       <div className="relative h-[50vh] min-h-[400px]">
         <img 

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from 'lucide-react';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
+import SEO from '../components/SEO';
 
 const PROJECT_IMAGES = [
   "https://i.ibb.co/j91XxtDN/IMG-20260606-WA0003.jpg",
@@ -228,10 +229,12 @@ const ProjectsPage = () => {
         )}
       </AnimatePresence>
 
-      <>
-        <title>Our Projects | Gill Architects Abohar</title>
-        <meta name="description" content="View our portfolio of residential and commercial projects in Abohar and surrounding areas. Modern designs, practical layouts." />
-      </>
+      <SEO 
+        title="Architecture Portfolio | Top Gill Architects Projects in Punjab"
+        description="View the prestigious portfolio of Gill Architects, featuring luxury residential designs, modern commercial architecture, and stunning 3D elevations across Punjab."
+        keywords="architecture portfolio, residential projects punjab, commercial architecture portfolio, 3d elevation designs, top architect projects, gill architects portfolio"
+        canonical="https://gillarchitects.vercel.app/projects"
+      />
 
       <div className="bg-charcoal-900 text-white pt-36 pb-20 md:pt-48 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/80 via-charcoal-900/20 to-transparent z-0"></div>

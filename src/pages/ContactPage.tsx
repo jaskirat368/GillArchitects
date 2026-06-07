@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, MessageCircle, ChevronDown, Instagram } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/business';
 import InteractiveCard from '../components/InteractiveCard';
+import SEO from '../components/SEO';
 import { motion } from 'motion/react';
 
 const SERVICES_OPTIONS = [
@@ -78,11 +79,12 @@ const ContactPage = () => {
 
   return (
     <>
-      <>
-        <title>Contact Gill Architects | Best Architect in Abohar</title>
-        <meta name="description" content="Contact Gill Architects today. As the best architect in Abohar, we offer 2D floor plans, 3D elevation, and interior design across Fazilka, Sri Ganganagar, and Punjab." />
-        <meta name="keywords" content="contact architect in abohar, architect near me, house planner in abohar, 3d designer in abohar, building consultant in abohar, Gill Architects Abohar" />
-      </>
+      <SEO 
+        title="Contact Gill Architects | Premier Architect in Punjab & Abohar"
+        description="Get in touch with Gill Architects. Book a consultation with the best architectural and interior design firm in Abohar, Punjab. Service across all major cities."
+        keywords="contact architect, architect in abohar, architecture firm near me, house planner in abohar, 3d designer in abohar, building consultant punjab, Gill Architects contact, architecture consultation"
+        canonical="https://gillarchitects.vercel.app/contact"
+      />
 
       <div className="bg-charcoal-900 text-white pt-36 pb-20 md:pt-48 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/80 via-charcoal-900/20 to-transparent z-0"></div>

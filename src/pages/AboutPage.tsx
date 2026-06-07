@@ -2,15 +2,29 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { CheckCircle2 } from 'lucide-react';
 import InteractiveCard from '../components/InteractiveCard';
+import SEO from '../components/SEO';
 
 const AboutPage = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Gill Architects",
+      "areaServed": ["Punjab", "Abohar", "Fazilka", "Muktsar", "Malout", "Bathinda", "Faridkot", "Moga", "Ferozepur", "Kotkapura", "Sri Ganganagar", "Chandigarh", "Mohali", "Ludhiana", "Amritsar", "Jalandhar", "Patiala"],
+      "description": "Leading architectural planning firm and interior designer in Abohar. We serve Fazilka, Sri Ganganagar, and all of Punjab."
+    }
+  };
+
   return (
     <>
-      <>
-        <title>About Gill Architects | The Best Architect in Abohar & Punjab</title>
-        <meta name="description" content="Learn about Gill Architects, the leading architectural planning firm and interior designer in Abohar. We serve Fazilka, Sri Ganganagar, and all of Punjab." />
-        <meta name="keywords" content="architect in abohar, best architect in abohar, architect in fazilka, architect in sri ganganagar, architect in punjab, interior designer in abohar, Gill Architects Punjab" />
-      </>
+      <SEO 
+        title="About Gill Architects | Top Architecture Firm in Punjab & Abohar"
+        description="Learn about Gill Architects, a premier architectural planning firm and interior designer based in Abohar. Expert team serving all major districts of Punjab."
+        keywords="architecture firm in punjab, best architect in abohar, architect in fazilka, architect in sri ganganagar, architect in punjab, interior designer in abohar, Gill Architects Punjab, residential architect, commercial architect, top interior designer near me"
+        canonical="https://gillarchitects.vercel.app/about"
+        jsonLd={JSON.stringify(jsonLd)}
+      />
 
       <div className="bg-charcoal-900 text-white pt-36 pb-20 md:pt-48 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/80 via-charcoal-900/20 to-transparent z-0"></div>

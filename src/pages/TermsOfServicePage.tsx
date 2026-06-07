@@ -1,13 +1,14 @@
 import React from 'react';
 import { BUSINESS_INFO } from '../data/business';
+import SEO from '../components/SEO';
 
 const TermsOfServicePage = () => {
   return (
     <>
-      <>
-        <title>Terms of Service | {BUSINESS_INFO.name}</title>
-        <meta name="description" content={`Terms of Service for ${BUSINESS_INFO.name}.`} />
-      </>
+      <SEO 
+        title={`Terms of Service | ${BUSINESS_INFO.name}`}
+        description={`Terms of Service for ${BUSINESS_INFO.name}.`}
+      />
       
       <main className="pt-32 pb-24 bg-pearl-50 min-h-screen">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">

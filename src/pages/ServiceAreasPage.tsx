@@ -1,14 +1,17 @@
 import React from 'react';
 import { SERVICE_AREAS } from '../data/business';
 import { MapPin } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const ServiceAreasPage = () => {
   return (
     <>
-      <>
-        <title>Service Areas | Gill Architects Abohar</title>
-        <meta name="description" content="We serve Abohar, Malout, Fazilka, Sri Ganganagar, and nearby villages. Check our service locations for architectural planning." />
-      </>
+      <SEO 
+        title="Service Areas | Best Architects in Punjab, Abohar & Beyond"
+        description="Gill Architects provides master architectural and interior design services across Punjab, including Abohar, Fazilka, Muktsar, Chandigarh, Mohali, Ludhiana, and Bathinda."
+        keywords="architect inside punjab, service areas punjab, gill architects locations, architects in Chandigarh, architect in Abohar, architect in Fazilka, architect in Muktsar, interior designer Punjab"
+        canonical="https://gillarchitects.vercel.app/areas"
+      />
 
       <div className="bg-charcoal-900 text-white pt-36 pb-20 md:pt-48 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/80 via-charcoal-900/20 to-transparent z-0"></div>

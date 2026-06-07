@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import InteractiveCard from '../components/InteractiveCard';
+import SEO from '../components/SEO';
 
 const BlogPage = () => {
   const posts = [
@@ -36,10 +37,12 @@ const BlogPage = () => {
 
   return (
     <>
-      <>
-        <title>Architecture Blog | Gill Architects</title>
-        <meta name="description" content="Read our latest insights on house planning, construction tips, and design trends in Abohar." />
-      </>
+      <SEO 
+        title="Architecture Blog | House Planning Tips & Architecture Trends Punjab"
+        description="Read our latest insights on house planning, construction tips, 3D elevation, and design trends across Abohar, Chandigarh, and Punjab."
+        keywords="architecture blog, house planning tips, construction advice punjab, architect insights, 3d elevation trends, interior design guide, Gill Architects blog"
+        canonical="https://gillarchitects.vercel.app/blog"
+      />
 
       <div className="bg-charcoal-900 text-white pt-36 pb-20 md:pt-48 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/80 via-charcoal-900/20 to-transparent z-0"></div>

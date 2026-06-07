@@ -5,6 +5,7 @@ import { ArrowRight, Phone, CheckCircle2, MapPin, Ruler, Home, ChevronDown, Chev
 import { useState } from 'react';
 import { BUSINESS_INFO, SERVICES } from '../data/business';
 import InteractiveCard from '../components/InteractiveCard';
+import SEO from '../components/SEO';
 
 const HomePage = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -15,50 +16,77 @@ const HomePage = () => {
 
   const faqs = [
     {
-      question: "Why should I hire a professional architect in Abohar?",
-      answer: "Hiring a professional architect in Abohar ensures that your residential building design or commercial space is optimized for both aesthetics and structural integrity. At Gill Architects, our architectural planning services save you money by preventing costly construction errors, maximizing plot space, and ensuring compliance with local building regulations."
+      question: "How much does an architect cost in Punjab?",
+      answer: "Architectural fees in Punjab vary based on the scope, plot size, and design complexity. Some charge a percentage of the project cost, while others charge per square foot for services like residential architecture, 3D elevation design, and house planning. Contact Gill Architects for a competitive and transparent quote tailored to your specific needs."
     },
     {
-      question: "What is included in your 3D elevation design services?",
-      answer: "Our 3D elevation design includes highly detailed 3D architectural rendering, modern front elevation design, and material suggestions. Whether you want a luxury home architect to design a modern villa or need commercial elevation design, we provide photorealistic 3D exterior design so you can visualize your project before construction starts."
+      question: "Why should I hire an architect before construction?",
+      answer: "Hiring a professional architect ensures that your building design is optimized for space, natural light, aesthetics, and structural integrity. An architectural consultant prevents costly construction errors, maximizes your plot space, and ensures compliance with local building regulations."
     },
     {
-      question: "Do you provide interior design services as well?",
-      answer: "Yes, Gill Architects is also a leading interior designer in Abohar. We offer complete interior planning services, including living room interior design, modular kitchen design, and contemporary interior design for both homes and commercial buildings. We merge luxury interior design with modern functionality."
+      question: "What is included in house planning?",
+      answer: "Comprehensive house planning includes 2D floor plans, space allocation, structural layout, Vastu compliance (if requested), electrical and plumbing layouts, and modern front elevation design. We provide end-to-end architectural planning services to ensure your dream home is practical and beautiful."
+    },
+    {
+      question: "How long does architectural design take?",
+      answer: "A standard residential house plan and 3D elevation design typically takes 1 to 3 weeks, depending on client revisions and project scale. Commercial architecture and large villa designs may take slightly longer for detailed 3D architectural rendering and structural drawings."
+    },
+    {
+      question: "Do you provide 3D elevation designs?",
+      answer: "Yes, our 3D elevation design services include highly detailed 3D architectural rendering, modern front exterior design, luxury villa elevation, and material suggestions. We provide photorealistic 3D rendering so you can visualize your project perfectly before construction starts."
+    },
+    {
+      question: "Do you design commercial projects?",
+      answer: "Absolutely. We are an experienced commercial architect firm designing offices, retail showrooms, shopping complexes, and hospitality spaces. We focus on modern commercial architecture that enhances business presence and operational efficiency."
     },
     {
       question: "Which areas do you serve in Punjab?",
-      answer: "While we are recognized as the best architect in Abohar, our architectural consultancy extends to neighboring regions. We regularly serve clients looking for an architect in Fazilka, an architect in Sri Ganganagar, Malout, Muktsar, and across Punjab. Our construction design consultant will travel to your site to ensure flawless execution."
+      answer: "While we are recognized as the best architect in Abohar, our architectural consultancy extends across Punjab. We frequently serve clients looking for an architect in Fazilka, Sri Ganganagar, Bathinda, Moga, Faridkot, Muktsar, Malout, Chandigarh, Mohali, and Ludhiana."
     }
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Architect",
+        "@id": "https://gillarchitects.vercel.app/#organization",
+        "name": "Gill Architects",
+        "image": "https://i.ibb.co/rRQ3XWRp/IMG-20260605-132311-1.png",
+        "url": "https://gillarchitects.vercel.app",
+        "telephone": "+91 98886 17761",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Abohar",
+          "addressRegion": "Punjab",
+          "addressCountry": "IN"
+        },
+        "priceRange": "$$",
+        "description": "Premium architectural planning services, modern house design, 3D elevation, and luxury interior design in Punjab."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
-      <>
-        <title>Gill Architects | Best Architect in Abohar | Modern House Planning & 3D Elevation</title>
-        <meta name="description" content="Looking for the best architect in Abohar? Gill Architects offers premium architectural planning services, modern house design, 3D elevation, and luxury interior design in Punjab and surrounding areas." />
-        <meta name="keywords" content="architect in abohar, best architect in abohar, architectural designer, residential architect, commercial architect, modern house design, 3d elevation design, interior designer in abohar, 2d floor plan, house planner in abohar" />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "ArchitecturalService",
-              "name": "Gill Architects",
-              "image": "https://i.ibb.co/rRQ3XWRp/IMG-20260605-132311-1.png",
-              "url": "https://gillarchitects.vercel.app",
-              "telephone": "+91 98886 17761",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Abohar",
-                "addressRegion": "Punjab",
-                "addressCountry": "IN"
-              },
-              "priceRange": "$$",
-              "description": "Premium architectural planning services, modern house design, 3D elevation, and luxury interior design in Punjab."
-            }
-          `}
-        </script>
-      </>
+      <SEO 
+        title="Gill Architects | Best Architect in Punjab | House Planning & 3D Elevation"
+        description="Looking for the best architect in Punjab? Gill Architects offers premium architectural planning, residential/commercial architecture, 3D elevation, and luxury interior design in Abohar, Fazilka, Chandigarh & beyond."
+        keywords="architect in punjab, best architect in punjab, top architect in punjab, architect near me, residential architect, commercial architect, house architect, villa architect, modern house architect, interior designer, building planner, house planner, 3d elevation designer, modern elevation design, architecture firm, abohar, fazilka, chandigarh"
+        canonical="https://gillarchitects.vercel.app/"
+        jsonLd={JSON.stringify(jsonLd)}
+      />
 
       {/* Hero Section */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
