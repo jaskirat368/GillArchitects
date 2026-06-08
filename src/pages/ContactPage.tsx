@@ -185,8 +185,10 @@ const ContactPage = () => {
             {/* Contact Form */}
             <motion.div 
               id="contact-form"
-              animate={{ y: [0, -15, 0] }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
               className="border border-pearl-100 shadow-2xl rounded-[2rem] overflow-hidden"
             >
               <div className="p-8 h-full bg-pearl-50">

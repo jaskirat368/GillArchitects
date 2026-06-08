@@ -125,7 +125,7 @@ const HomePage = () => {
         />
 
         {/* Content Container */}
-        <div className="container mx-auto px-5 md:px-8 relative z-30 flex flex-col items-start text-left pt-32 pb-24">
+        <div className="container mx-auto px-5 md:px-8 relative z-30 flex flex-col items-start text-left pt-24 pb-16 md:pt-28 md:pb-20 xl:pt-32 xl:pb-20">
           
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -134,7 +134,7 @@ const HomePage = () => {
             className="w-full flex flex-col items-start"
           >
             {/* Super Heading */}
-            <div className="inline-flex items-center justify-center gap-4 mb-6 w-full">
+            <div className="inline-flex items-center justify-start gap-4 mb-4 lg:mb-6 w-full lg:w-auto">
               <span className="w-12 md:w-24 h-[1px] bg-gradient-to-l from-[#faf0ca] to-transparent relative overflow-hidden">
                 <motion.span animate={{ x: ['-100%', '100%'] }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} className="absolute inset-0 bg-white/50 w-full h-full" />
               </span>
@@ -145,14 +145,16 @@ const HomePage = () => {
             </div>
 
             {/* Main Title */}
-            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-extrabold text-white leading-[1.1] tracking-tight mb-8 text-left relative">
-              <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="block drop-shadow-2xl">MODERN</motion.span>
-              <motion.span initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="block drop-shadow-2xl">DESIGN</motion.span>
-              <motion.span initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.7 }} className="block text-[#faf0ca]/60 font-light drop-shadow-xl text-3xl sm:text-5xl my-2 sm:my-3">&amp;</motion.span>
-              <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }} className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-pearl-100 drop-shadow-2xl">PROFESSIONAL</motion.span>
-              <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.1 }} className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-[#faf0ca] to-[#faf0ca] drop-shadow-lg pr-0 relative">
-                ARCHITECTURE
-              </motion.span>
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.8rem] 2xl:text-[5.5rem] font-extrabold text-white leading-[1.05] tracking-tight mb-4 lg:mb-6 text-left relative z-10 max-w-5xl">
+              <div className="flex flex-wrap items-center gap-x-2 md:gap-x-4 lg:gap-x-5 leading-none">
+                <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="drop-shadow-2xl inline-block">MODERN</motion.span>
+                <motion.span initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="drop-shadow-2xl inline-block">DESIGN</motion.span>
+                <motion.span initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.7 }} className="text-[#faf0ca]/80 font-light drop-shadow-xl text-2xl sm:text-4xl lg:text-5xl mx-1 select-none leading-none">&amp;</motion.span>
+                <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }} className="text-transparent bg-clip-text bg-gradient-to-r from-white to-pearl-100 drop-shadow-2xl inline-block">PROFESSIONAL</motion.span>
+                <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.1 }} className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#faf0ca] to-[#faf0ca] drop-shadow-lg inline-block">
+                  ARCHITECTURE
+                </motion.span>
+              </div>
             </h1>
 
             {/* Glassmorphism description card */}
