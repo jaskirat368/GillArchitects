@@ -62,7 +62,7 @@ const getBentoClass = (index: number) => {
   }
 };
 
-const ProjectImage = ({ image, idx, onClick }: { image: string, idx: number, onClick: () => void }) => {
+const ProjectImage: React.FC<{ image: string, idx: number, onClick: () => void }> = ({ image, idx, onClick }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (

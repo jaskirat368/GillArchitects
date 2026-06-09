@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { createBrowserRouter, RouterProvider, ScrollRestoration, Outlet } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, ScrollRestoration, Outlet, useLocation } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import StickyCTA from './components/layout/StickyCTA';
@@ -18,7 +18,6 @@ import NotFoundPage from './pages/NotFoundPage';
 import FaqPage from './pages/FaqPage';
 import BlogPostPage from './pages/BlogPostPage';
 
-import ScrollToTop from './components/layout/ScrollToTop';
 import { LoadingScreen } from './components/LoadingScreen';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -46,14 +45,26 @@ const PRELOAD_IMAGES = [
 ];
 
 const Layout = () => {
+  const location = useLocation();
+
   return (
-    <div className="min-h-screen bg-pearl-50 font-sans text-charcoal-900 selection:bg-pearl-200 selection:text-charcoal-900">
-      <ScrollToTop />
+    <div className="min-h-screen bg-pearl-50 font-sans text-charcoal-900 selection:bg-pearl-200 selection:text-charcoal-900 flex flex-col">
       <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
+      <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
+        <motion.div
+          key={location.pathname}
+          initial={{ opacity: 0, y: 30, scale: 0.98, filter: 'blur(12px)' }}
+          animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+          exit={{ opacity: 0, y: -30, scale: 0.98, filter: 'blur(12px)', transition: { duration: 0.4, ease: 'easeIn' } }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col flex-grow w-full"
+        >
+          <main className="flex-grow w-full">
+            <Outlet />
+          </main>
+          <Footer />
+        </motion.div>
+      </AnimatePresence>
       <StickyCTA />
       <ScrollRestoration />
     </div>
