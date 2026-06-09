@@ -125,7 +125,7 @@ const HomePage = () => {
         />
 
         {/* Content Container */}
-        <div className="container mx-auto px-5 md:px-8 relative z-30 flex flex-col items-start text-left pt-32 pb-24 lg:pt-24 lg:pb-12 xl:pt-28 2xl:pt-32 2xl:pb-24">
+        <div className="container mx-auto px-5 md:px-8 relative z-30 flex flex-col items-start text-left pt-32 pb-24 lg:pt-36 lg:pb-16 xl:pt-40 2xl:pt-48 2xl:pb-24">
           
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -134,21 +134,21 @@ const HomePage = () => {
             className="w-full flex flex-col items-start"
           >
             {/* Super Heading */}
-            <div className="inline-flex items-center justify-center gap-4 mb-6 w-full">
+            <div className="inline-flex items-center justify-center gap-4 mb-6 lg:mb-4 xl:mb-6 w-full">
               <span className="w-12 md:w-24 h-[1px] bg-gradient-to-l from-[#faf0ca] to-transparent relative overflow-hidden">
                 <motion.span animate={{ x: ['-100%', '100%'] }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} className="absolute inset-0 bg-white/50 w-full h-full" />
               </span>
-              <span className="text-[#faf0ca] text-xs md:text-sm lg:text-base font-sans uppercase tracking-[0.4em] font-bold">GILL ARCHITECTS</span>
+              <span className="text-[#faf0ca] text-xs md:text-sm lg:text-xs xl:text-sm font-sans uppercase tracking-[0.4em] font-bold">GILL ARCHITECTS</span>
               <span className="w-12 md:w-24 h-[1px] bg-gradient-to-r from-[#faf0ca] to-transparent relative overflow-hidden">
                 <motion.span animate={{ x: ['-100%', '100%'] }} transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 1 }} className="absolute inset-0 bg-white/50 w-full h-full" />
               </span>
             </div>
 
             {/* Main Title */}
-            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[4.5rem] xl:text-[5rem] 2xl:text-[5.5rem] font-extrabold text-white leading-[1.05] tracking-tight mb-8 lg:mb-4 2xl:mb-8 text-left relative">
+            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4.75rem] font-extrabold text-white leading-[1.05] tracking-tight mb-8 lg:mb-3 xl:mb-5 2xl:mb-8 text-left relative">
               <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="block drop-shadow-2xl">MODERN</motion.span>
               <motion.span initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="block drop-shadow-2xl">DESIGN</motion.span>
-              <motion.span initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.7 }} className="block text-[#faf0ca]/60 font-light drop-shadow-xl text-3xl sm:text-5xl lg:text-4xl 2xl:text-5xl my-2 sm:my-3 lg:my-1 2xl:my-3">&amp;</motion.span>
+              <motion.span initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.7 }} className="block text-[#faf0ca]/60 font-light drop-shadow-xl text-3xl sm:text-5xl lg:text-3xl xl:text-4xl 2xl:text-5xl my-2 sm:my-3 lg:my-1 xl:my-2 2xl:my-3">&amp;</motion.span>
               <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }} className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-pearl-100 drop-shadow-2xl">PROFESSIONAL</motion.span>
               <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.1 }} className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-[#faf0ca] to-[#faf0ca] drop-shadow-lg pr-0 relative">
                 ARCHITECTURE
@@ -159,11 +159,11 @@ const HomePage = () => {
             <InteractiveCard 
               flowColor="#faf0ca"
               tiltIntensity={8}
-              className="max-w-xl mb-6 lg:mb-4 2xl:mb-6 overflow-hidden" 
+              className="max-w-xl mb-6 lg:mb-4 xl:mb-5 2xl:mb-6 overflow-hidden" 
             >
               <div className="bg-white/5 backdrop-blur-md border border-white/10 border-l-2 border-l-[#faf0ca] p-5 md:p-6 lg:p-4 xl:p-5 2xl:p-6 w-full h-full group [transform-style:preserve-3d]">
                 <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <p className="text-sm md:text-base lg:text-sm xl:text-base text-pearl-50 leading-relaxed font-light relative z-10 text-left transition-all duration-500 group-hover:[transform:translateZ(30px)] group-hover:drop-shadow-lg">
+                <p className="text-sm md:text-base lg:text-xs xl:text-sm 2xl:text-base text-pearl-50 leading-relaxed font-light relative z-10 text-left transition-all duration-500 group-hover:[transform:translateZ(30px)] group-hover:drop-shadow-lg">
                   Commanding a new standard in Abohar. From striking 3D elevations to intelligent floor planning&mdash;we shape spaces that exude modern luxury and endure for generations.
                 </p>
               </div>
@@ -174,18 +174,18 @@ const HomePage = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="flex items-center gap-4 mb-10 lg:mb-6 2xl:mb-10 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full"
+              className="flex items-center gap-4 mb-10 lg:mb-5 xl:mb-8 2xl:mb-10 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full"
             >
               <div className="flex -space-x-2">
                 {[1, 2, 3].map((i) => (
-                  <div key={i} className="w-8 h-8 rounded-full border-2 border-charcoal-900 bg-charcoal-800 flex items-center justify-center overflow-hidden">
+                  <div key={i} className="w-8 h-8 lg:w-6 lg:h-6 xl:w-8 xl:h-8 rounded-full border-2 border-charcoal-900 bg-charcoal-800 flex items-center justify-center overflow-hidden">
                     <img src={`https://i.pravatar.cc/100?u=${i + 10}`} alt="Client" className="w-full h-full object-cover opacity-80" />
                   </div>
                 ))}
               </div>
               <div className="flex flex-col">
-                <span className="text-[#faf0ca] text-xs font-bold tracking-wider">12+ YEARS OF EXCELLENCE</span>
-                <span className="text-pearl-200 text-[10px]">Trusted by 500+ Happy Clients</span>
+                <span className="text-[#faf0ca] text-xs lg:text-[10px] xl:text-xs font-bold tracking-wider">12+ YEARS OF EXCELLENCE</span>
+                <span className="text-pearl-200 text-[10px] lg:text-[8px] xl:text-[10px]">Trusted by 500+ Happy Clients</span>
               </div>
             </motion.div>
             
@@ -194,16 +194,16 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.5, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 items-center justify-start w-full sm:w-auto mt-4 lg:mt-2 2xl:mt-4"
+              className="flex flex-col sm:flex-row gap-4 items-center justify-start w-full sm:w-auto mt-4 lg:mt-2 xl:mt-4 2xl:mt-6"
             >
               <motion.a 
                 href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
                 animate={{ y: [0, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="w-full sm:w-48 group relative overflow-hidden bg-white text-charcoal-900 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] flex items-center justify-center gap-2 cursor-pointer shadow-xl"
+                className="w-full sm:w-48 group relative overflow-hidden bg-white text-charcoal-900 px-8 py-4 lg:py-3 xl:py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] flex items-center justify-center gap-2 cursor-pointer shadow-xl lg:text-sm xl:text-base"
               >
                 <div className="absolute inset-0 w-full h-full bg-[#faf0ca] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></div>
-                <Phone className="w-4 h-4 relative z-10 transition-transform group-hover:scale-110 group-hover:rotate-12" /> 
+                <Phone className="w-4 h-4 lg:w-3 lg:h-3 xl:w-4 xl:h-4 relative z-10 transition-transform group-hover:scale-110 group-hover:rotate-12" /> 
                 <span className="relative z-10 whitespace-nowrap">Call Now</span>
               </motion.a>
               <motion.div
@@ -213,10 +213,10 @@ const HomePage = () => {
               >
                 <Link 
                   to="/contact#contact-form"
-                  className="group w-full block bg-charcoal-900/40 border border-white/30 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:bg-white/10 hover:border-white shadow-lg backdrop-blur-sm flex items-center justify-center gap-2 relative overflow-hidden"
+                  className="group w-full block bg-charcoal-900/40 border border-white/30 text-white px-8 py-4 lg:py-3 xl:py-4 rounded-full font-semibold transition-all duration-300 hover:bg-white/10 hover:border-white shadow-lg backdrop-blur-sm flex items-center justify-center gap-2 relative overflow-hidden lg:text-sm xl:text-base"
                 >
                   <span className="whitespace-nowrap relative z-10">Consultation</span> 
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" />
+                  <ArrowRight className="w-4 h-4 lg:w-3 lg:h-3 xl:w-4 xl:h-4 group-hover:translate-x-1 transition-transform relative z-10" />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
                 </Link>
               </motion.div>

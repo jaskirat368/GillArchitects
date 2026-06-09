@@ -55,13 +55,13 @@ const Header = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-3 xl:gap-5">
+        <nav className="hidden lg:flex items-center gap-2 lg:gap-4 xl:gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-charcoal-900 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-charcoal-900 after:transition-all hover:after:w-full whitespace-nowrap",
+                "text-[13px] xl:text-sm font-medium transition-colors hover:text-charcoal-900 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-charcoal-900 after:transition-all hover:after:w-full whitespace-nowrap px-1",
                 location.pathname === link.path ? "text-charcoal-900 after:w-full" : "text-charcoal-600"
               )}
             >
@@ -70,19 +70,19 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-3 xl:gap-4 shrink-0">
+        <div className="hidden lg:flex items-center gap-2 xl:gap-4 shrink-0">
           <a 
             href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
-            className="flex items-center gap-2 text-charcoal-900 bg-white border border-pearl-200 px-5 py-2.5 text-sm font-medium rounded-full hover:bg-pearl-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-md whitespace-nowrap"
+            className="flex items-center gap-1.5 xl:gap-2 text-charcoal-900 bg-white border border-pearl-200 px-4 xl:px-5 py-2 xl:py-2.5 text-[13px] xl:text-sm font-medium rounded-full hover:bg-pearl-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-md whitespace-nowrap"
           >
-            <Phone className="w-4 h-4" />
+            <Phone className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
             <span>Call Now</span>
           </a>
           <Link
             to="/contact#contact-form"
-            className="bg-charcoal-900 text-white px-6 py-2.5 text-sm font-medium rounded-full hover:bg-charcoal-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex items-center gap-2 whitespace-nowrap"
+            className="bg-charcoal-900 text-white px-5 xl:px-6 py-2 xl:py-2.5 text-[13px] xl:text-sm font-medium rounded-full hover:bg-charcoal-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex items-center gap-1.5 xl:gap-2 whitespace-nowrap"
           >
-            Get Quote <ArrowRight className="w-4 h-4" />
+            Get Quote <ArrowRight className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
           </Link>
         </div>
 
