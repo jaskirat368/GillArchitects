@@ -29,7 +29,7 @@ const Footer = () => {
               <a href={BUSINESS_INFO.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-charcoal-800 flex items-center justify-center hover:bg-charcoal-700 hover:text-[#faf0ca] transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href={`https://wa.me/${BUSINESS_INFO.whatsapp}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-charcoal-800 flex items-center justify-center hover:bg-charcoal-700 hover:text-[#25D366] transition-colors" aria-label="WhatsApp">
+              <a href={`https://wa.me/${BUSINESS_INFO.whatsapp}?text=Hi%20Gill%20Architects%2C%20I%20am%20interested%20in%20your%20services%20and%20would%20like%20to%20discuss%20a%20project.`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-charcoal-800 flex items-center justify-center hover:bg-charcoal-700 hover:text-[#25D366] transition-colors" aria-label="WhatsApp">
                 <MessageCircle className="w-5 h-5" />
               </a>
             </div>

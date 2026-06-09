@@ -139,7 +139,7 @@ const ContactPage = () => {
                     <h3 className="text-lg font-bold text-charcoal-900 mb-1">WhatsApp</h3>
                     <p className="text-sm text-charcoal-500 mb-2">10:30 am - 6:00 pm<br/>(Closed On Sunday)</p>
                     <a 
-                      href={`https://wa.me/${BUSINESS_INFO.whatsapp}`}
+                      href={`https://wa.me/${BUSINESS_INFO.whatsapp}?text=Hi%20Gill%20Architects%2C%20I%20am%20interested%20in%20your%20services%20and%20would%20like%20to%20discuss%20a%20project.`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-bold text-charcoal-900 hover:text-charcoal-600 transition-colors cursor-pointer"

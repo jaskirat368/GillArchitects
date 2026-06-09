@@ -121,7 +121,7 @@ const ServiceDetailPage = () => {
                     Call Us
                   </a>
                   <a 
-                    href={`https://wa.me/${BUSINESS_INFO.whatsapp}`}
+                    href={`https://wa.me/${BUSINESS_INFO.whatsapp}?text=Hi%20Gill%20Architects%2C%20I%20am%20interested%20in%20your%20${encodeURIComponent(service.title.toLowerCase())}%20services%20and%20would%20like%20to%20discuss%20a%20project.`}
                     className="block w-full bg-[#25D366] text-white text-center py-3 rounded-full font-bold hover:bg-[#20bd5a] transition-colors"
                   >
                     WhatsApp Us
