@@ -125,7 +125,7 @@ const HomePage = () => {
         />
 
         {/* Content Container */}
-        <div className="container mx-auto px-5 md:px-8 relative z-30 flex flex-col items-start text-left pt-32 pb-24 lg:pt-52 lg:pb-12 xl:pt-56 2xl:pt-64 2xl:pb-24">
+        <div className="container mx-auto px-5 md:px-8 relative z-30 flex flex-col items-start text-left pt-32 pb-24 lg:pt-28 lg:pb-12 xl:pt-32 2xl:pt-40 2xl:pb-24">
           
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
