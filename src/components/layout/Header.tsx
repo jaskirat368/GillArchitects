@@ -55,13 +55,13 @@ const Header = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-3 xl:gap-5">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-charcoal-900 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-charcoal-900 after:transition-all hover:after:w-full",
+                "text-sm font-medium transition-colors hover:text-charcoal-900 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-charcoal-900 after:transition-all hover:after:w-full whitespace-nowrap",
                 location.pathname === link.path ? "text-charcoal-900 after:w-full" : "text-charcoal-600"
               )}
             >
@@ -70,17 +70,17 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-3 xl:gap-4 shrink-0">
           <a 
             href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
-            className="flex items-center gap-2 text-charcoal-600 hover:text-charcoal-900 font-medium text-sm transition-colors"
+            className="flex items-center gap-2 text-charcoal-900 bg-white border border-pearl-200 px-5 py-2.5 text-sm font-medium rounded-full hover:bg-pearl-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-md whitespace-nowrap"
           >
             <Phone className="w-4 h-4" />
-            <span>{BUSINESS_INFO.phone}</span>
+            <span>Call Now</span>
           </a>
           <Link
             to="/contact#contact-form"
-            className="bg-charcoal-900 text-white px-6 py-2.5 text-sm font-medium rounded-full hover:bg-charcoal-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex items-center gap-2"
+            className="bg-charcoal-900 text-white px-6 py-2.5 text-sm font-medium rounded-full hover:bg-charcoal-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex items-center gap-2 whitespace-nowrap"
           >
             Get Quote <ArrowRight className="w-4 h-4" />
           </Link>

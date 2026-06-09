@@ -125,7 +125,7 @@ const HomePage = () => {
         />
 
         {/* Content Container */}
-        <div className="container mx-auto px-5 md:px-8 relative z-30 flex flex-col items-start text-left pt-32 pb-24">
+        <div className="container mx-auto px-5 md:px-8 relative z-30 flex flex-col items-start text-left pt-32 pb-24 lg:pt-24 lg:pb-12 xl:pt-28 2xl:pt-32 2xl:pb-24">
           
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -145,10 +145,10 @@ const HomePage = () => {
             </div>
 
             {/* Main Title */}
-            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-extrabold text-white leading-[1.1] tracking-tight mb-8 text-left relative">
+            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[4.5rem] xl:text-[5rem] 2xl:text-[5.5rem] font-extrabold text-white leading-[1.05] tracking-tight mb-8 lg:mb-4 2xl:mb-8 text-left relative">
               <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="block drop-shadow-2xl">MODERN</motion.span>
               <motion.span initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="block drop-shadow-2xl">DESIGN</motion.span>
-              <motion.span initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.7 }} className="block text-[#faf0ca]/60 font-light drop-shadow-xl text-3xl sm:text-5xl my-2 sm:my-3">&amp;</motion.span>
+              <motion.span initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.7 }} className="block text-[#faf0ca]/60 font-light drop-shadow-xl text-3xl sm:text-5xl lg:text-4xl 2xl:text-5xl my-2 sm:my-3 lg:my-1 2xl:my-3">&amp;</motion.span>
               <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }} className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-pearl-100 drop-shadow-2xl">PROFESSIONAL</motion.span>
               <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.1 }} className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-[#faf0ca] to-[#faf0ca] drop-shadow-lg pr-0 relative">
                 ARCHITECTURE
@@ -159,11 +159,11 @@ const HomePage = () => {
             <InteractiveCard 
               flowColor="#faf0ca"
               tiltIntensity={8}
-              className="max-w-xl mb-6 overflow-hidden" 
+              className="max-w-xl mb-6 lg:mb-4 2xl:mb-6 overflow-hidden" 
             >
-              <div className="bg-white/5 backdrop-blur-md border border-white/10 border-l-2 border-l-[#faf0ca] p-5 md:p-6 w-full h-full group [transform-style:preserve-3d]">
+              <div className="bg-white/5 backdrop-blur-md border border-white/10 border-l-2 border-l-[#faf0ca] p-5 md:p-6 lg:p-4 xl:p-5 2xl:p-6 w-full h-full group [transform-style:preserve-3d]">
                 <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <p className="text-sm md:text-base text-pearl-50 leading-relaxed font-light relative z-10 text-left transition-all duration-500 group-hover:[transform:translateZ(30px)] group-hover:drop-shadow-lg">
+                <p className="text-sm md:text-base lg:text-sm xl:text-base text-pearl-50 leading-relaxed font-light relative z-10 text-left transition-all duration-500 group-hover:[transform:translateZ(30px)] group-hover:drop-shadow-lg">
                   Commanding a new standard in Abohar. From striking 3D elevations to intelligent floor planning&mdash;we shape spaces that exude modern luxury and endure for generations.
                 </p>
               </div>
@@ -174,7 +174,7 @@ const HomePage = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="flex items-center gap-4 mb-10 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full"
+              className="flex items-center gap-4 mb-10 lg:mb-6 2xl:mb-10 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full"
             >
               <div className="flex -space-x-2">
                 {[1, 2, 3].map((i) => (
@@ -194,7 +194,7 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.5, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 items-center justify-start w-full sm:w-auto mt-4"
+              className="flex flex-col sm:flex-row gap-4 items-center justify-start w-full sm:w-auto mt-4 lg:mt-2 2xl:mt-4"
             >
               <motion.a 
                 href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
