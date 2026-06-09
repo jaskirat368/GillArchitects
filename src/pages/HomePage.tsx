@@ -125,7 +125,7 @@ const HomePage = () => {
         />
 
         {/* Content Container */}
-        <div className="container mx-auto px-5 md:px-8 relative z-30 flex flex-col items-start text-left pt-32 pb-24 lg:pt-36 lg:pb-16 xl:pt-40 2xl:pt-48 2xl:pb-24">
+        <div className="container mx-auto px-5 md:px-8 relative z-30 flex flex-col items-start text-left pt-32 pb-24 lg:pt-52 lg:pb-12 xl:pt-56 2xl:pt-64 2xl:pb-24">
           
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -145,10 +145,10 @@ const HomePage = () => {
             </div>
 
             {/* Main Title */}
-            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4.75rem] font-extrabold text-white leading-[1.05] tracking-tight mb-8 lg:mb-3 xl:mb-5 2xl:mb-8 text-left relative">
+            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[4rem] font-extrabold text-white leading-[1.05] tracking-tight mb-8 lg:mb-4 xl:mb-5 2xl:mb-6 text-left relative">
               <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="block drop-shadow-2xl">MODERN</motion.span>
               <motion.span initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="block drop-shadow-2xl">DESIGN</motion.span>
-              <motion.span initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.7 }} className="block text-[#faf0ca]/60 font-light drop-shadow-xl text-3xl sm:text-5xl lg:text-3xl xl:text-4xl 2xl:text-5xl my-2 sm:my-3 lg:my-1 xl:my-2 2xl:my-3">&amp;</motion.span>
+              <motion.span initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.7 }} className="block text-[#faf0ca]/60 font-light drop-shadow-xl text-3xl sm:text-5xl lg:text-2xl 2xl:text-4xl my-2 sm:my-3 lg:my-1 xl:my-2">&amp;</motion.span>
               <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }} className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-pearl-100 drop-shadow-2xl">PROFESSIONAL</motion.span>
               <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.1 }} className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-[#faf0ca] to-[#faf0ca] drop-shadow-lg pr-0 relative">
                 ARCHITECTURE
