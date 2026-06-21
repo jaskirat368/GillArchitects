@@ -89,7 +89,7 @@ const HomePage = () => {
       />
 
       {/* Hero Section */}
-      <section id="hero-section" className="relative min-h-[100dvh] pt-[90px] md:pt-[104px] pb-12 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
         {/* Background Layer */}
         <div className="absolute inset-0 z-0 bg-charcoal-950">
           <img 
@@ -125,7 +125,7 @@ const HomePage = () => {
         />
 
         {/* Content Container */}
-        <div id="hero-content" className="container mx-auto px-5 md:px-8 relative z-30 flex flex-col items-start text-left w-full my-auto">
+        <div className="container mx-auto px-5 md:px-8 relative z-30 flex flex-col items-start text-left pt-32 pb-24 lg:pt-28 lg:pb-12 xl:pt-32 2xl:pt-40 2xl:pb-24">
           
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
